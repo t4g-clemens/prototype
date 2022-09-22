@@ -1,88 +1,35 @@
 <div class="grid-container">
   <div class="grid-left">
     <div class="body-div">
-      <div class="mat-title">Jobtitel</div>
-      <div class="mat-body1">
-        Gib einen selbsterklärenden Jobtitel an
-      </div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Jobtitel</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <div class="mat-title">Untertitel</div>
-      <div class="mat-body1">
-        Bitte gib eine kurze Beschreibung für den Jobtitel an,
-        die auf die Behördenziele einzahlt
-      </div>
-      <div class="mat-body1">… oder gib an,
-        warum die Stelle wichtig für die Behörde ist
-      </div>
-      <div class="mat-body1">… oder gib an,
-        was diese Stelle in der Behörde verändern kann
-      </div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Untertitel</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Jobtitle" subtitle="Gib einen selbsterklärenden Jobtitel an" [isTextarea]=false></app-section>
 
-      <div class="mat-title">Wer wir sind</div>
-      <div class="mat-body1">Beschreibe die Vision und Ziele der Behörde</div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Wer wir sind</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Untertitel" subtitle="Bitte gib eine kurze Beschreibung für den Jobtitel an,
+      die auf die Behördenziele einzahlt … oder gib an,
+      warum die Stelle wichtig für die Behörde ist … oder gib an,
+      was diese Stelle in der Behörde verändern kann."></app-section>
 
-      <div class="mat-title">Daran arbeitest du</div>
-      <div class="mat-body1">Beschreibe Projekte, an denen die Bewerber:in arbeiten wird</div>
-      <div class="mat-body1">Beschreibe was die Bewerber:in in den Projekten tut</div>
-      <div class="mat-body1">Beschreibe, wie die Stelle in die Behördenziele einzahlt</div>
+      <app-section title="Wer wir sind" subtitle="Beschreibe die Vision und Ziele der Behörde."></app-section>
 
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Daran arbeitest du</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Daran arbeitest du"
+        subtitle="Beschreibe Projekte, an denen die Bewerber:in arbeiten wird. Beschreibe was die Bewerber:in in den Projekten tut. Beschreibe, wie die Stelle in die Behördenziele einzahlt.">
+      </app-section>
 
-      <div class="mat-title">Das bringst du mit</div>
-      <div class="mat-body1">Was soll die Bewerber:in mitbringen? </div>
-      <div class="mat-body1">Was ist wichtig, was ist erwünscht?</div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Das bringst du mit</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Das bringst du mit"
+        subtitle="Was soll die Bewerber:in mitbringen? Was ist wichtig, was ist erwünscht?"></app-section>
 
-      <div class="mat-title">Dein Team</div>
-      <div class="mat-body1">Beschreibe, mit welchen anderen Rollen die Bewerber:in zusammenarbeiten wird</div>
-      <div class="mat-body1">Wer ist noch im Team?</div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Dein Team</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Dein Team"
+        subtitle="Beschreibe, mit welchen anderen Rollen die Bewerber:in zusammenarbeiten wird. Wer ist noch im Team?">
+      </app-section>
 
-      <div class="mat-title">So arbeiten wir</div>
-      <div class="mat-body1">Wie viel der Arbeitszeit wird was gemacht?
-      </div>
-      <div class="mat-body1">Welche Entscheidungen werden selbst getroffen, welche im Team?</div>
+      <app-section title="So arbeiten wir"
+        subtitle="Wie viel der Arbeitszeit wird was gemacht? Welche Entscheidungen werden selbst getroffen, welche im Team?">
+      </app-section>
 
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>So arbeiten wir</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Das erwartet dich" subtitle="Beschreibe die Benefits">
+      </app-section>
 
-      <div class="mat-title">Das erwartet dich</div>
-      <div class="mat-body1">Beschreibe die Benefits</div>
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Das erwartet dich</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
-
-      <div class="mat-title">Disclaimer</div>
-      <div class="mat-body1">Unerlässliche Rahmeninformationen
-      </div>
-
-      <mat-form-field appearance="fill" class="input-module">
-        <mat-label>Disclaimer</mat-label>
-        <textarea matInput rows="5"></textarea>
-      </mat-form-field>
+      <app-section title="Disclaimer" subtitle="Unerlässliche Rahmeninformationen">
+      </app-section>
 
       <div class="button-row">
         <button mat-raised-button color="primary" class="button-row-item">Veröffentlichen</button>

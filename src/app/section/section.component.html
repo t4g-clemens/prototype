@@ -1,0 +1,21 @@
+<div>
+    <div *ngIf="isTextarea === true" class="input-module">
+        <div class="mat-title">{{title}}</div>
+        <div class="mat-body1">{{subtitle}}</div>
+        <mat-form-field appearance="fill" class="input-module">
+            <mat-label>{{title}}</mat-label>
+            <textarea matInput rows="5"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="isTextarea != true" class="input-module">
+        <div class="mat-title">{{title}}</div>
+        <div class="mat-body1">
+            {{subtitle}}
+        </div>
+        <mat-form-field appearance="fill" class="input-module">
+            <mat-label>{{title}}</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+</div>
