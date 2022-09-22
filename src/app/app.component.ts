@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SECTIONDATA } from './sections-data';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { SECTIONDATA } from './sections-data';
 })
 export class AppComponent {
   title = 'prototype';
-  sectionData = SECTIONDATA
 }

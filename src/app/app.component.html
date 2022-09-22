@@ -1,15 +1,7 @@
 <div class="grid-container">
   <div class="grid-left">
     <div class="body-div">
-      <div *ngFor="let data of sectionData">
-        <app-section [title]="data.title" [subtitle]="data.subtitle" [isTextarea]="data.isTextarea"></app-section>
-      </div>
-
-      <div class="button-row">
-        <button mat-raised-button color="primary" class="button-row-item">Veröffentlichen</button>
-        <button mat-raised-button color="secondary" class="button-row-item">Zwischenspeichern</button>
-      </div>
-
+      <app-section-list></app-section-list>
     </div>
   </div>
   <div class="grid-right">

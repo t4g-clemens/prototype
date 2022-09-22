@@ -9,12 +9,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { SectionComponent } from './section/section.component';
+import { SectionListComponent } from './section-list/section-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SectionComponent
+    SectionComponent,
+    SectionListComponent
   ],
   imports: [
     BrowserModule,
