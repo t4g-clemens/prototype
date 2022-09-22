@@ -1,35 +1,9 @@
 <div class="grid-container">
   <div class="grid-left">
     <div class="body-div">
-      <app-section title="Jobtitle" subtitle="Gib einen selbsterklärenden Jobtitel an" [isTextarea]=false></app-section>
-
-      <app-section title="Untertitel" subtitle="Bitte gib eine kurze Beschreibung für den Jobtitel an,
-      die auf die Behördenziele einzahlt … oder gib an,
-      warum die Stelle wichtig für die Behörde ist … oder gib an,
-      was diese Stelle in der Behörde verändern kann."></app-section>
-
-      <app-section title="Wer wir sind" subtitle="Beschreibe die Vision und Ziele der Behörde."></app-section>
-
-      <app-section title="Daran arbeitest du"
-        subtitle="Beschreibe Projekte, an denen die Bewerber:in arbeiten wird. Beschreibe was die Bewerber:in in den Projekten tut. Beschreibe, wie die Stelle in die Behördenziele einzahlt.">
-      </app-section>
-
-      <app-section title="Das bringst du mit"
-        subtitle="Was soll die Bewerber:in mitbringen? Was ist wichtig, was ist erwünscht?"></app-section>
-
-      <app-section title="Dein Team"
-        subtitle="Beschreibe, mit welchen anderen Rollen die Bewerber:in zusammenarbeiten wird. Wer ist noch im Team?">
-      </app-section>
-
-      <app-section title="So arbeiten wir"
-        subtitle="Wie viel der Arbeitszeit wird was gemacht? Welche Entscheidungen werden selbst getroffen, welche im Team?">
-      </app-section>
-
-      <app-section title="Das erwartet dich" subtitle="Beschreibe die Benefits">
-      </app-section>
-
-      <app-section title="Disclaimer" subtitle="Unerlässliche Rahmeninformationen">
-      </app-section>
+      <div *ngFor="let data of sectionData">
+        <app-section [title]="data.title" [subtitle]="data.subtitle" [isTextarea]="data.isTextarea"></app-section>
+      </div>
 
       <div class="button-row">
         <button mat-raised-button color="primary" class="button-row-item">Veröffentlichen</button>

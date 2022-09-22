@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+export interface sectionData {
+  title: string,
+  subtitle: string,
+  isTextarea: boolean
+}
+
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
@@ -11,6 +17,8 @@ export class SectionComponent implements OnInit {
   @Input() subtitle: string = "";
 
   @Input() isTextarea: boolean = true;
+
+  textInput: string = "";
 
   constructor() {
   }
