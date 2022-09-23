@@ -13,7 +13,7 @@ export class SectionListComponent implements OnInit {
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;
 
-  onClick(): void {
+  onTextareaClick(): void {
     for (let section of this.viewSections) {
       console.log(section.textInput)
     }

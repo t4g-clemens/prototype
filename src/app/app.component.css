@@ -6,7 +6,7 @@
 
 .explain-div {
     position: fixed;
-    padding-top: 15%;
+    padding-top: 2%;
     padding-left: 50px;
 }
 
@@ -26,6 +26,7 @@
     grid-template-columns: 60% auto;
 }
 
-/* .grid-right {
-    background-color: bisque;
-} */
+
+.grid-right {
+    background-color: rgb(237, 231, 246);
+}

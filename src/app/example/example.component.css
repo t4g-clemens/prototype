@@ -2,3 +2,12 @@
     background-color: rgb(250, 250, 250);
     width: 300px;
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}
