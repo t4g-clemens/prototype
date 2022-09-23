@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { EventService } from '../event.service';
 
 export interface sectionData {
   title: string,
@@ -20,7 +21,7 @@ export class SectionComponent implements OnInit {
 
   textInput: string = "";
 
-  constructor() {
+  constructor(public eventService: EventService) {
   }
 
   ngOnInit(): void {

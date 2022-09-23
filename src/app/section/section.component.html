@@ -1,8 +1,8 @@
-<div>
-    <div *ngIf="isTextarea === true" class="input-module">
+<mat-card>
+    <div *ngIf="isTextarea === true">
         <div class="mat-title">{{title}}</div>
         <div class="mat-body1">{{subtitle}}</div>
-        <mat-form-field appearance="fill" class="input-module">
+        <mat-form-field appearance="fill" class="input-module" (mouseenter)="eventService.setActive(title)">
             <mat-label>{{title}}</mat-label>
             <textarea matInput rows="5" [(ngModel)]="textInput"></textarea>
         </mat-form-field>
@@ -18,4 +18,4 @@
             <input matInput [(ngModel)]="textInput">
         </mat-form-field>
     </div>
-</div>
+</mat-card>

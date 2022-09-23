@@ -1,9 +1,15 @@
 .input-module {
-    width: 95%;
+    width: 100%;
     padding-top: 15px;
 }
 
 .mat-body1 {
-    width: 95%;
+    width: 100%;
     color: rgb(73, 73, 73);
+}
+
+.mat-card {
+    /* background-color: rgb(250, 250, 250); */
+    margin-top: 45px;
+    margin-bottom: 15px;
 }
