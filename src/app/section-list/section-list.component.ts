@@ -1,6 +1,8 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { ConfigService } from '../config.service';
 import { SectionComponent } from '../section/section.component';
-import { SECTIONDATA } from '../sections-data';
+
+
 
 @Component({
   selector: 'app-section-list',
@@ -8,8 +10,8 @@ import { SECTIONDATA } from '../sections-data';
   styleUrls: ['./section-list.component.css']
 })
 export class SectionListComponent implements OnInit {
-
-  sectionData = SECTIONDATA;
+  section_data_url = '../assets/sectiondata.json';
+  sections: any = []
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;
 
@@ -20,9 +22,18 @@ export class SectionListComponent implements OnInit {
     console.log('test')
   }
 
-  constructor() { }
+  getSections(): void {
+    this.api.getSections()
+      .subscribe(data => {
+        this.sections = data.sections;
+        console.log(this.sections);
+      });
+  }
+
+  constructor(private api: ConfigService) { }
 
   ngOnInit(): void {
+    this.getSections();
   }
 
 }
