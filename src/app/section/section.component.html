@@ -1,20 +1,20 @@
 <mat-card>
-    <div *ngIf="isTextarea === true">
-        <div class="mat-title">{{title}}</div>
-        <div class="mat-body1">{{subtitle}}</div>
-        <mat-form-field appearance="fill" class="input-module" (mouseenter)="eventService.setActive(title)">
-            <mat-label>{{title}}</mat-label>
+    <div *ngIf="data.isTextarea === true">
+        <div class="mat-title">{{data.title}}</div>
+        <div class="mat-body1">{{data.subtitle}}</div>
+        <mat-form-field appearance="fill" class="input-module" (mouseenter)="eventService.setActive(data.title)">
+            <mat-label>{{data.title}}</mat-label>
             <textarea matInput rows="5" [(ngModel)]="textInput"></textarea>
         </mat-form-field>
     </div>
 
-    <div *ngIf="isTextarea != true" class="input-module">
-        <div class="mat-title">{{title}}</div>
+    <div *ngIf="data.isTextarea != true" class="input-module">
+        <div class="mat-title">{{data.title}}</div>
         <div class="mat-body1">
-            {{subtitle}}
+            {{data.subtitle}}
         </div>
         <mat-form-field appearance="fill" class="input-module">
-            <mat-label>{{title}}</mat-label>
+            <mat-label>{{data.title}}</mat-label>
             <input matInput [(ngModel)]="textInput">
         </mat-form-field>
     </div>

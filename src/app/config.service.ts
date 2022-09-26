@@ -13,17 +13,36 @@ interface SectionList {
   sections: Section[]
 }
 
+interface TextInput {
+    job_titel: string,
+    sub_title: string,
+    who_we_are: string,
+    tasks: string,
+    requirements: string,
+    team: string,
+    work_culture: string,
+    benefits: string,
+    disclaimer: string
+  }
+
+export interface PartialTextInput extends Partial<TextInput> {};
+
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
 
-  // section_url = '../assets/sectiondata.json';
-  section_url = 'http://localhost:8000/config';
+  config_url = 'http://localhost:8000/config';
+  data_url = 'http://localhost:8000/'
 
   constructor(private http: HttpClient) { }
 
   getSections(): Observable<SectionList> {
-    return this.http.get<SectionList>(this.section_url)
+    return this.http.get<SectionList>(this.config_url)
+  }
+
+  postTextInput(text_input: PartialTextInput): Observable<TextInput> {
+    console.log("sending")
+    return this.http.post<TextInput>(this.data_url, text_input)
   }
 }

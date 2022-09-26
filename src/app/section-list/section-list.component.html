@@ -1,9 +1,9 @@
 <div *ngFor="let data of sections">
-    <app-section [title]="data.title" [subtitle]="data.subtitle" [isTextarea]="data.isTextarea"></app-section>
+    <app-section [data]="data"></app-section>
 </div>
 
 <div class="button-row">
     <button mat-raised-button color="primary" class="button-row-item"
-        (click)="onTextareaClick()">Veröffentlichen</button>
+        (click)="onSubmitButtonClick()">Veröffentlichen</button>
     <button mat-raised-button color="secondary" class="button-row-item">Zwischenspeichern</button>
 </div>

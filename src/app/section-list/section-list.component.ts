@@ -1,7 +1,6 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ConfigService } from '../config.service';
+import { ConfigService, PartialTextInput } from '../config.service';
 import { SectionComponent } from '../section/section.component';
-
 
 
 @Component({
@@ -14,11 +13,15 @@ export class SectionListComponent implements OnInit {
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;
 
-  onTextareaClick(): void {
+  onSubmitButtonClick(): void {
+    let data: PartialTextInput = {};
     for (let section of this.viewSections) {
-      console.log(section.textInput)
+      data[section.data.id as keyof PartialTextInput] = section.textInput;
+      // console.log(section.textInput)
     }
-    console.log('test')
+
+    this.api.postTextInput(data).subscribe();
+    console.log(data)
   }
 
   getSections(): void {
