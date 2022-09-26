@@ -10,7 +10,6 @@ import { SectionComponent } from '../section/section.component';
   styleUrls: ['./section-list.component.css']
 })
 export class SectionListComponent implements OnInit {
-  section_data_url = '../assets/sectiondata.json';
   sections: any = []
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;

@@ -18,7 +18,8 @@ interface SectionList {
 })
 export class ConfigService {
 
-  section_url = '../assets/sectiondata.json'
+  // section_url = '../assets/sectiondata.json';
+  section_url = 'http://localhost:8000/config';
 
   constructor(private http: HttpClient) { }
 
