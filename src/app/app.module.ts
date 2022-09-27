@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 import { SectionComponent } from './section/section.component';
 import { SectionListComponent } from './section-list/section-list.component';
@@ -41,10 +42,11 @@ import { environment } from 'src/environments/environment';
     MatToolbarModule,
     MatIconModule,
     MatStepperModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 800}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
