@@ -17,7 +17,11 @@ export class SectionComponent implements OnInit {
 
   textInput: string = "";
 
-  constructor(public eventService: EventService) {
+  activateThis() {
+    this.eventService.setActive(this);
+  }
+
+  constructor(private eventService: EventService) {
   }
 
   ngOnInit(): void {

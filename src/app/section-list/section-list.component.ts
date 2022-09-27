@@ -6,6 +6,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-section-list',
@@ -51,6 +52,7 @@ export class SectionListComponent implements OnInit {
   }
 
   constructor(
+    public eventService: EventService,
     private config: ConfigService,
     private store: AngularFirestore,
     private _snackBar: MatSnackBar) { }

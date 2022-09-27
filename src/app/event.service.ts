@@ -6,11 +6,11 @@ import { SectionComponent } from './section/section.component';
 })
 export class EventService {
 
-  activeElement?: string; // Switch to id or something like it
+  activeElement?: SectionComponent;
 
-  setActive(elem: string): void {
+  setActive(elem: SectionComponent): void {
     this.activeElement = elem;
-    console.log('activated ' + elem)
+    console.log('activated ' + elem.id)
   }
 
   constructor() { }

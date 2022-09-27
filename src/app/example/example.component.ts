@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService, Examples } from '../config.service';
 import { EventService } from '../event.service';
 
 class ExampleCard {
@@ -17,18 +18,21 @@ class ExampleCard {
   styleUrls: ['./example.component.css']
 })
 export class ExampleComponent implements OnInit {
+  examples_data?: Examples
 
   getExample(): ExampleCard {
-    let exampleCard = new ExampleCard(
-      this.eventService.activeElement + " (Beispiel)"
-    )
-    if (this.eventService.activeElement === "Daran arbeitest du") {
-      exampleCard.body = "\"Für den operativen Einsatz beim kommenden G7 Gipfeltreffen in Schloss Elmau hat das BDOS eine Besondere Aufbauorganisation (BAO) für die Gewährleistung eines uneingeschränkten Digitalfunkbetriebs eingerichtet. Mit ca. 22.000 Einsatzkräften und über 18.000 registrierten Endgeräten wird es sich um eine der größten Einsatzlagen der vergangenen Jahre handeln. Wir brauchen dich, um über Statistische Analysen und Outlier Detections in Echtzeit Engpässe zu erkennen und so gezielt eingreifen zu können.\""
+    let activeElem = this.eventService.activeElement
+    let exampleCard = new ExampleCard("Beispiel", "")
+    if ( activeElem && this.examples_data){
+      let example_list = this.examples_data[activeElem.id as keyof Examples];
+      exampleCard.body =  example_list[0]
     }
     return exampleCard
   }
 
-  constructor(public eventService: EventService) { }
+  constructor(public eventService: EventService, private config: ConfigService) {
+    config.getExamples().subscribe(d => this.examples_data = d.examples)
+  }
 
   ngOnInit(): void {
   }
