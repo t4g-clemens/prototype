@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EventService } from '../event.service';
 
-export interface sectionData {
-  title: string,
-  subtitle: string,
-  isTextarea: boolean
-}
 
 @Component({
   selector: 'app-section',
@@ -14,6 +9,7 @@ export interface sectionData {
 })
 export class SectionComponent implements OnInit {
 
+  @Input() id: string = "";
   @Input() title: string = "";
   @Input() subtitle: string = "";
 

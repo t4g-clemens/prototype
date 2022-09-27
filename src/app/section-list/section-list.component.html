@@ -1,9 +1,13 @@
+<!-- <mat-stepper orientation="vertical"> -->
 <div *ngFor="let data of sections">
-    <app-section [title]="data.title" [subtitle]="data.subtitle" [isTextarea]="data.isTextarea"></app-section>
+  <!-- <mat-step> -->
+    <app-section [id]="data.id" [title]="data.title" [subtitle]="data.subtitle" [isTextarea]="data.isTextarea"></app-section>
+  <!-- </mat-step> -->
 </div>
-
+<!-- </mat-stepper> -->
 <div class="button-row">
     <button mat-raised-button color="primary" class="button-row-item"
-        (click)="onTextareaClick()">Veröffentlichen</button>
-    <button mat-raised-button color="secondary" class="button-row-item">Zwischenspeichern</button>
+      (click)="onSubmit()">Speichern</button>
+    <button mat-raised-button color="secondary" class="button-row-item"
+      (click)="onCancel()">Verwerfen</button>
 </div>

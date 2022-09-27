@@ -1,8 +1,10 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ConfigService } from '../config.service';
 import { SectionComponent } from '../section/section.component';
-
-
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-section-list',
@@ -10,27 +12,36 @@ import { SectionComponent } from '../section/section.component';
   styleUrls: ['./section-list.component.css']
 })
 export class SectionListComponent implements OnInit {
-  section_data_url = '../assets/sectiondata.json';
   sections: any = []
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;
 
-  onTextareaClick(): void {
+  onSubmit(): void {
+    let data: {[id: string]: string} = {};
     for (let section of this.viewSections) {
+      data[section.id] = section.textInput
       console.log(section.textInput)
     }
-    console.log('test')
+    this.store.collection('sections').add(
+      {
+        timestamp: Date(),
+        input: data
+      })
+  }
+
+  onCancel(): void {
+    // Delete all section data
   }
 
   getSections(): void {
-    this.api.getSections()
+    this.config.getSections()
       .subscribe(data => {
         this.sections = data.sections;
         console.log(this.sections);
       });
   }
 
-  constructor(private api: ConfigService) { }
+  constructor(private config: ConfigService, private store: AngularFirestore) { }
 
   ngOnInit(): void {
     this.getSections();
