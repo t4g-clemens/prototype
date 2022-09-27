@@ -1,7 +1,8 @@
 import { Component, OnInit, Input,Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatCard, MatCardContent } from '@angular/material/card';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-loginscreen',
@@ -9,14 +10,17 @@ import { MatCard, MatCardContent } from '@angular/material/card';
   styleUrls: ['./loginscreen.component.css']
 })
 export class LoginscreenComponent implements OnInit {
+
   form: FormGroup = new FormGroup({
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
   });
 
+  loginError: boolean = false;
+
   @Output() submitEM = new EventEmitter();
 
-  constructor() { }
+  constructor(private auth: AuthenticationService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +29,14 @@ export class LoginscreenComponent implements OnInit {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
     }
+    const { email, password } = this.form.value
+    this.auth.login(email, password).then(() => {
+      this.loginError = false;
+      this.router.navigate([''])
+    }).catch((error) => {
+      console.log('login error')
+      this.form.controls['password'].setErrors({'incorrect': true});
+    });
   }
 
 }

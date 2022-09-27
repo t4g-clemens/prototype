@@ -30,3 +30,7 @@
 .grid-right {
   background-color: rgb(237, 231, 246);
 }
+
+mat-toolbar {
+  justify-content: space-between;
+}
