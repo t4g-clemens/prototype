@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns: 55% auto;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(242, 247, 249, 96);
+}
+
+.right {
+  background-color: rgb(71, 48, 105);
+}
+
+
+.mat-form-field {
+  width: 30%;
+  min-width: 300px;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+.mat-card {
+  width: 50%;
+  min-height: 300px;
+  padding-top: 100px;
+}
+.mat-card-title,
+.mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
