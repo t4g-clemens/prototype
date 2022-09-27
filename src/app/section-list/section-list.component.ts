@@ -1,7 +1,11 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ConfigService, PartialTextInput } from '../config.service';
 import { SectionComponent } from '../section/section.component';
-
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-section-list',
@@ -13,26 +17,43 @@ export class SectionListComponent implements OnInit {
 
   @ViewChildren(SectionComponent) viewSections!: QueryList<SectionComponent>;
 
-  onSubmitButtonClick(): void {
-    let data: PartialTextInput = {};
+  onSubmit(): void {
+    let data: {[id: string]: string} = {};
     for (let section of this.viewSections) {
-      data[section.data.id as keyof PartialTextInput] = section.textInput;
-      // console.log(section.textInput)
+      data[section.id] = section.textInput
+      console.log(section.textInput)
     }
+    this.store.collection('sections').add(
+      {
+        timestamp: Date(),
+        input: data
+      })
+    this.openSnackBar("Data saved ...")
+  }
 
-    this.api.postTextInput(data).subscribe();
-    console.log(data)
+  onCancel(): void {
+    for (let section of this.viewSections) {
+      section.textInput = ""
+      console.log("deleted " + section.id)
+    }
   }
 
   getSections(): void {
-    this.api.getSections()
+    this.config.getSections()
       .subscribe(data => {
         this.sections = data.sections;
         console.log(this.sections);
       });
   }
 
-  constructor(private api: ConfigService) { }
+  openSnackBar(message: string) {
+    this._snackBar.open(message);
+  }
+
+  constructor(
+    private config: ConfigService,
+    private store: AngularFirestore,
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getSections();
