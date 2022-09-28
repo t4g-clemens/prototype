@@ -3,10 +3,10 @@ import { ConfigService, PartialTextInput } from '../config.service';
 import { SectionComponent } from '../section/section.component';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EventService } from '../event.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-section-list',
@@ -24,12 +24,19 @@ export class SectionListComponent implements OnInit {
       data[section.id] = section.textInput
       console.log(section.textInput)
     }
-    this.store.collection('sections').add(
-      {
-        timestamp: Date(),
-        input: data
-      })
-    this.openSnackBar("Data saved ...")
+    this.auth.getUser().subscribe(
+      (user) => {
+        if ( user !== null ) {
+        this.store.collection('sections').add(
+          {
+            username: user.email,
+            timestamp: Date(),
+            input: data
+          });
+        this.openSnackBar("Data saved ...")
+      }
+    }
+    )
   }
 
   onCancel(): void {
@@ -55,6 +62,7 @@ export class SectionListComponent implements OnInit {
     public eventService: EventService,
     private config: ConfigService,
     private store: AngularFirestore,
+    private auth: AuthenticationService,
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {

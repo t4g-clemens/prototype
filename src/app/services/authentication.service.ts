@@ -17,4 +17,8 @@ export class AuthenticationService {
     console.log("loggin out")
     return from(this.auth.signOut())
   }
+
+  getUser() {
+    return this.auth.user
+  }
 }
