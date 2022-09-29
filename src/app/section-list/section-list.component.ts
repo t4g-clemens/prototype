@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ConfigService, PartialTextInput } from '../config.service';
+import { ConfigService } from '../config.service';
 import { SectionComponent } from '../section/section.component';
 import {
   AngularFirestore,

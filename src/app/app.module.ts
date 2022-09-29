@@ -26,6 +26,12 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { ListoverviewComponent } from './listoverview/listoverview.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SectionListComponent,
     ExampleComponent,
     LoginscreenComponent,
-    DashboardComponent
+    ListoverviewComponent,
+    DashboardComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +58,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatIconModule,
     MatStepperModule,
     MatSnackBarModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 800}}],
   bootstrap: [AppComponent]
