@@ -1,43 +1,14 @@
 <div class="list-container">
 
 <div align="end">
-  <button mat-fab color="primary"><mat-icon>add</mat-icon>
+  <button mat-fab color="primary" (click)="addNewJobDescription()"><mat-icon>add</mat-icon>
   </button>
 </div>
 
 <div class="mat-title">Neue Stellen</div>
 <mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-</mat-list>
-
-<div class="mat-title">In Bearbeitung durch Fachabteilung</div>
-<mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-</mat-list>
-
-<div class="mat-title">Fertiggestellt durch Fachabteilunge</div>
-<mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-</mat-list>
-
-<div class="mat-title">Veröffentlich</div>
-<mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
+  <div  *ngFor="let item of jds">
+  <mat-list-item role="listitem">{{ item.id }}</mat-list-item>
+  </div>
 </mat-list>
 </div>

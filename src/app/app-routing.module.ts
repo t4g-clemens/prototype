@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
 import { ListoverviewComponent } from './listoverview/listoverview.component';
+import { SectionListComponent } from './section-list/section-list.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedIn = () => redirectLoggedInTo([''])
+const redirectLoggedIn = () => redirectLoggedInTo(['/dashboard'])
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
     pathMatch: 'full',
     component: ListoverviewComponent,
     ...canActivate(redirectToLogin)},
+    {
+      path: 'sectionlist',
+      component: SectionListComponent,
+      ...canActivate(redirectToLogin)},
   { path: 'login', component: LoginscreenComponent, ...canActivate(redirectLoggedIn)}
 ];
 

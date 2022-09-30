@@ -10,7 +10,8 @@ export const environment = {
     storageBucket: "t4g22-prototype.appspot.com",
     messagingSenderId: "57982292189",
     appId: "1:57982292189:web:f3d9a1f9fef7b5b7efcb34",
-    measurementId: "G-CW34DBW7DG"
+    measurementId: "G-CW34DBW7DG",
+    databaseURL: "t4g22-prototype-default-rtdb.europe-west1.firebasedatabase.app"
   },
   production: false
 };
