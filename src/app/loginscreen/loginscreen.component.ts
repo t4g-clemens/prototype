@@ -18,21 +18,16 @@ export class LoginscreenComponent implements OnInit {
 
   loginError: boolean = false;
 
-  @Output() submitEM = new EventEmitter();
-
   constructor(private auth: AuthenticationService, private router: Router ) { }
 
   ngOnInit(): void {
   }
 
   submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
     const { email, password } = this.form.value
     this.auth.login(email, password).then(() => {
       this.loginError = false;
-      this.router.navigate([''])
+      this.router.navigate(['/home/dashboard'])
     }).catch((error) => {
       console.log('login error')
       this.form.controls['password'].setErrors({'incorrect': true});

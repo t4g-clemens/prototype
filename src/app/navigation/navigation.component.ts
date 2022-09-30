@@ -24,7 +24,7 @@ export class NavigationComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private auth: AuthenticationService,
+    public auth: AuthenticationService,
     private router: Router) {}
 
 }

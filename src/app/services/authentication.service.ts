@@ -6,6 +6,7 @@ import { from } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  loggedIn = false
 
   constructor(private auth: AngularFireAuth) {}
 
@@ -15,10 +16,12 @@ export class AuthenticationService {
 
   logout () {
     console.log("loggin out")
+    this.loggedIn = false
     return from(this.auth.signOut())
   }
 
   getUser() {
     return this.auth.user
   }
+
 }
