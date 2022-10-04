@@ -5,6 +5,8 @@ import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angula
 import { ListoverviewComponent } from './listoverview/listoverview.component';
 import { SectionListComponent } from './section-list/section-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NewJobDescriptionComponent } from './new-job-description/new-job-description.component';
+import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -23,8 +25,13 @@ const routes: Routes = [
       ...canActivate(redirectToLogin)
     },
     {
-      path: 'sectionlist',
-      component: SectionListComponent,
+      path: 'hiringmanager',
+      component: HiringManagerComponent,
+      ...canActivate(redirectToLogin)
+    },
+    {
+      path: 'newjobdescription',
+      component: NewJobDescriptionComponent,
       ...canActivate(redirectToLogin)
     },
   ]}

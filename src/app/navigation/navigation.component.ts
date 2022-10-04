@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
+import { UserroleService, userRole } from '../services/userrole.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,6 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
+
+  _human_resources = userRole.human_resources;
+  _department = userRole.departments;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -25,6 +29,7 @@ export class NavigationComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public auth: AuthenticationService,
-    private router: Router) {}
+    private router: Router,
+    public userRoleService: UserroleService) {}
 
 }

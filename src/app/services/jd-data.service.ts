@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/compat/database';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { JobDescription as JobDescription } from '../interfaces/jobdescription';
 import { AuthenticationService } from './authentication.service';
 
@@ -16,9 +16,16 @@ export class JdDataService {
     this.items = this.db.list('items');
   }
 
-  getList(): AngularFireList<JobDescription> {
+  getList(): AngularFireList<any> {
     return this.items
   }
+
+  getItem(key: string): Observable<any>{
+    return this.db.object(`items/${key}`)
+    .snapshotChanges()
+    .pipe(map(res => res.payload.val()))
+  }
+
 
   addItem(item: JobDescription) {
     this.items.push(item).then(() => {console.log('added', item)})

@@ -1,0 +1,46 @@
+<div class="formContainer">
+<form [formGroup]="form">
+<p>
+  <mat-form-field appearance="fill">
+    <input type="username" matInput placeholder="Ausschreibungsnummer" formControlName="id">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input type="username" matInput placeholder="Ort" formControlName="location">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Bewerbungsfrist" formControlName="application_deadline">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Einstellungsdatum" formControlName="start_date">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Beschäftigungsart" formControlName="employment_type">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Vergütung" formControlName="compensation">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Bildungsabschluss" formControlName="education">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Website" formControlName="website">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <textarea matInput rows="5" placeholder="Notizen" formControlName="notes" class="areaField">
+      testasdf
+    </textarea>
+  </mat-form-field>
+</p>
+<button mat-button (click)="onClear()">Cancel</button>
+<button mat-button (click)="onSave()">Save</button>
+<button mat-button (click)="onSubmitToDepartment()">Submit</button>
+</form>
+</div>

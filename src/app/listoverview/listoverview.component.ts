@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { JdDataService } from '../services/jd-data.service';
 import { JobDescription } from '../interfaces/jobdescription';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { UserroleService, userRole } from '../services/userrole.service';
 
 @Component({
   selector: 'app-listoverview',
@@ -11,29 +12,41 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 })
 export class ListoverviewComponent implements OnInit {
 
-  jds?: JobDescription[];
+  jds?: any[];
 
-  constructor(public db: JdDataService ) {
+  constructor(
+    public db: JdDataService,
+    private router: Router,
+    public userRoleService: UserroleService) {
   }
 
   ngOnInit(): void {
     this.getJobDescriptionList();
   }
 
-  getJobDescriptionList(): void {
-    this.db.getList().valueChanges()
-      .subscribe(data => {
-        this.jds = data;
-      })
-    }
+  onAddJobDescription(): void {
+    this.router.navigate(['/home/newjobdescription'])
+  }
 
-  addNewJobDescription() {
-    let jd: JobDescription = {
-      id: "New ID",
-      user: "test_user",
-      created_at: Date(),
-      hiring_manager: "hm_user"
-    }
-    this.db.addItem(jd)
+  getJobDescriptionList(): void {
+      this.db.getList().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+        )
+      ).subscribe(data => {
+          this.jds = data;
+        })
+      }
+
+  openToEditByDepartment(key: string) {
+    // open hiring manager view to fill in new fields
+    this.router.navigate(['/home/hiringmanager'], {state: {key: key}})
+    console.log(key)
+  }
+
+  openToEditByHr(key: string) {
+    // open human resources view to fill in new fields
+    this.router.navigate(['/home/newjobdescription'], {state: {key: key}})
+    console.log(key)
   }
 }

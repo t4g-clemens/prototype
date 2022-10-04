@@ -15,6 +15,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { SectionComponent } from './section/section.component';
 import { SectionListComponent } from './section-list/section-list.component';
@@ -25,13 +28,14 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { ListoverviewComponent } from './listoverview/listoverview.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { NewJobDescriptionComponent } from './new-job-description/new-job-description.component';
+import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +45,9 @@ import { MatDividerModule } from '@angular/material/divider';
     ExampleComponent,
     LoginscreenComponent,
     ListoverviewComponent,
-    DashboardComponent,
-    NavigationComponent
+    NavigationComponent,
+    NewJobDescriptionComponent,
+    HiringManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSidenavModule,
     MatListModule,
     MatDividerModule,
+    MatDatepickerModule,
+    MatMenuModule,
+    MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,

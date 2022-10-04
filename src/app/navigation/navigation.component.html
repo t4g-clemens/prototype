@@ -6,8 +6,9 @@
     <mat-toolbar (click)="drawer.toggle()">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]='["dashboard"]'>Dashboard</a>
-      <a mat-list-item [routerLink]='["sectionlist"]'>Guidelines</a>
-      <a mat-list-item href="#">Textbausteine</a>
+      <a mat-list-item [routerLink]='["hiringmanager"]'>Guidelines</a>
+      <a mat-list-item [routerLink]='["hiringmanager"]'>{{ userRoleService.role }}</a>
+      <!-- <a mat-list-item [routerLink]='["newjobdescription"]'>Textbausteine</a> -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,7 +22,40 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
         <span>Bundesgestaltung Prototype</span>
-        <button mat-button (click)="logout()"><mat-icon>logout</mat-icon> Logout</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <mat-radio-group [(ngModel)]="userRoleService.role">
+            <button mat-menu-item>
+          <mat-radio-button [value]="_human_resources" checked="true">
+            Personal
+          </mat-radio-button>
+        </button>
+        <button mat-menu-item >
+          <mat-radio-button [value]="_department">
+            Fachabteilung
+          </mat-radio-button>
+        </button>
+          </mat-radio-group>
+          <!-- <mat-radio-group
+            [(ngModel)]="role" >
+            <button mat-menu-item >
+            <mat-radio-button [value]="role">
+              1111
+            </mat-radio-button>
+            <mat-radio-button [value]="role">
+              2222222
+            </mat-radio-button> -->
+            <!-- <mat-radio-button *ngFor="let selection of selections" [value]="selection">
+              {{ selection }}
+            </mat-radio-button>
+          </button>
+          </mat-radio-group> -->
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon> Logout
+          </button>
+        </mat-menu>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
