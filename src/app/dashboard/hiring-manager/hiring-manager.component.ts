@@ -46,7 +46,10 @@ export class HiringManagerComponent implements OnInit {
   save(): void {
     // end editing and set status of JD to next field
     console.log(this.form.value)
-    this.db.getList().update(this.key, {hiring_manager_data: this.form.value})
+    this.db.getList().update(this.key, {
+      stage: "in_edit_by_department",
+      hiring_manager_data: this.form.value
+    })
     this.router.navigate(['/home/dashboard'])
   }
 
@@ -54,8 +57,8 @@ export class HiringManagerComponent implements OnInit {
     // end editing and set status of JD to next field
     console.log(this.form.value)
     this.db.getList().update(this.key, {
+      stage: "completed_by_department",
       hiring_manager_data: this.form.value,
-      hiring_manager_input: true,
     })
     this.router.navigate(['/home/dashboard'])
   }
