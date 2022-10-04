@@ -32,9 +32,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { ListoverviewComponent } from './listoverview/listoverview.component';
+import { ListoverviewComponent } from './dashboard/listoverview/listoverview.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { NewJobDescriptionComponent } from './new-job-description/new-job-description.component';
+import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 
 @NgModule({

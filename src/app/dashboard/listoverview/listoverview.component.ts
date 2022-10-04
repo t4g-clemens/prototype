@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JdDataService } from '../services/jd-data.service';
-import { JobDescription } from '../interfaces/jobdescription';
+import { JdDataService } from '../../services/jd-data.service';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
-import { UserroleService, userRole } from '../services/userrole.service';
+import { UserroleService, userRole } from '../../services/userrole.service';
 
 @Component({
   selector: 'app-listoverview',

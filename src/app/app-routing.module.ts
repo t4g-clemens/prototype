@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
-import { ListoverviewComponent } from './listoverview/listoverview.component';
+import { ListoverviewComponent } from './dashboard/listoverview/listoverview.component';
 import { SectionListComponent } from './section-list/section-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NewJobDescriptionComponent } from './new-job-description/new-job-description.component';
+import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 
 
