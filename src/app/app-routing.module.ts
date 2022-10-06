@@ -7,6 +7,7 @@ import { SectionListComponent } from './section-list/section-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
+import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -32,6 +33,11 @@ const routes: Routes = [
     {
       path: 'newjobdescription',
       component: NewJobDescriptionComponent,
+      ...canActivate(redirectToLogin)
+    },
+    {
+      path: 'recruitment',
+      component: HumanResourcesViewComponent,
       ...canActivate(redirectToLogin)
     },
   ]}

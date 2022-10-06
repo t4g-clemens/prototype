@@ -38,14 +38,20 @@ export class ListoverviewComponent implements OnInit {
       }
 
   openToEditByDepartment(key: string) {
-    // open hiring manager view to fill in new fields
+    // open hiring manager view to fill in  department fields
     this.router.navigate(['/home/hiringmanager'], {state: {key: key}})
     console.log(key)
   }
 
-  openToEditByHr(key: string) {
+  openToEditNewJD(key: string) {
     // open human resources view to fill in new fields
     this.router.navigate(['/home/newjobdescription'], {state: {key: key}})
+    console.log(key)
+  }
+
+  openToEditByHr(key: string) {
+    // open human resources view to complete JD
+    this.router.navigate(['/home/recruitment'], {state: {key: key}})
     console.log(key)
   }
 }

@@ -7,17 +7,34 @@
 <div class="mat-title">Neue Stellen</div>
 <mat-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'new'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'new'" role="listitem" (click)="openToEditNewJD(item.key)">{{ item.id }}</mat-list-item>
   </div>
 </mat-list>
-<div class="mat-title">In bearbeitung durch Fachabteilung</div>
+<div class="mat-title">In Bearbeitung durch Fachabteilung</div>
 <mat-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditNewJD(item.key)">{{ item.id }}</mat-list-item>
+  </div>
+</mat-list>
+<div class="mat-title">Fertiggestellt durch Fachabteilung</div>
+<mat-list role="list">
+  <div  *ngFor="let item of jds">
+    <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  </div>
+</mat-list>
+<div class="mat-title">In Bearbeitung durch Personalabteilung</div>
+<mat-list role="list">
+  <div  *ngFor="let item of jds">
+    <mat-list-item *ngIf="item.stage === 'in_edit_by_hr'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  </div>
+</mat-list>
+<div class="mat-title">Fertiggestellt</div>
+<mat-list role="list">
+  <div  *ngFor="let item of jds">
+    <mat-list-item *ngIf="item.stage === 'finished'" role="listitem">{{ item.id }}</mat-list-item>
   </div>
 </mat-list>
 </div>
-
 
 <div *ngIf="userRoleService.getUserRole() === 'department'" class="list-container">
 
