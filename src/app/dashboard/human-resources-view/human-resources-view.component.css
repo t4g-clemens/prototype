@@ -34,3 +34,18 @@
   border-radius: 5px;
   border: 2px solid rgb(98, 98, 98, 0.374);
 }
+
+.smallHintBox {
+  padding: 30px;
+  height: 250px;
+  border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.374);
+}
+
+.departmentInput {
+  margin-top: 35px;
+  padding: 30px;
+  height: 200px;
+  border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.374);
+}

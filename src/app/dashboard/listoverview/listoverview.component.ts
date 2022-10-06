@@ -23,9 +23,6 @@ export class ListoverviewComponent implements OnInit {
     this.getJobDescriptionList();
   }
 
-  onAddJobDescription(): void {
-    this.router.navigate(['/home/newjobdescription'])
-  }
 
   getJobDescriptionList(): void {
       this.db.getList().snapshotChanges().pipe(
@@ -41,6 +38,10 @@ export class ListoverviewComponent implements OnInit {
     // open hiring manager view to fill in  department fields
     this.router.navigate(['/home/hiringmanager'], {state: {key: key}})
     console.log(key)
+  }
+
+  onAddJobDescription(): void {
+    this.router.navigate(['/home/newjobdescription'], {state: {key: ''}})
   }
 
   openToEditNewJD(key: string) {

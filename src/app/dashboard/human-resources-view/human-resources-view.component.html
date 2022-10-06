@@ -1,7 +1,6 @@
 <div class="mainContainer">
   <div class="stepperContainer">
-  <mat-stepper headerPosition="bottom" labelPosition="bottom"
-  [selectedIndex]="currentStep" #stepper>
+  <mat-stepper headerPosition="bottom" labelPosition="bottom" #stepper>
     <mat-step>
       <div class="mat-title">Unser Purpose</div>
       <div class="empathyBox">to be filled ...</div>
@@ -140,22 +139,6 @@
         </mat-form-field>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <form [formGroup]="form">
-        <div class="mat-title">Wie</div>
-        <div class="empathyBox">to be filled ...</div>
-
-        <!-- <ng-template matStepLabel>Wie</ng-template> -->
-        <mat-form-field appearance="fill">
-          <mat-label>Wie wird gearbeitet</mat-label>
-          <textarea matInput rows="6" formControlName="how" placeholder="..."></textarea>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="save()">Save</button>
           <button mat-button>Vorschau</button>
           <button mat-button (click)="finish()">Fertigstellen</button>
@@ -165,6 +148,13 @@
   </mat-stepper>
   </div>
   <div class="helpContainer">
-    <div class="hintBox">to be filled ...</div>
+    <div class="hintBox" *ngIf="hint_page() === ''">to be filled ...</div>
+    <div *ngIf="hint_page() !== ''">
+      <div class="smallHintBox">to be filled ... xx </div>
+      <div class="departmentInput">
+        <div class="mat-subheading-1">Input der Fachabteilung</div>
+        <p>{{ hint_page() }}</p>
+      </div>
+    </div>
   </div>
   </div>

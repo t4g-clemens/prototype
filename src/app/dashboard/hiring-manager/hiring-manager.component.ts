@@ -12,10 +12,9 @@ import { JdDataService } from 'src/app/services/jd-data.service';
 export class HiringManagerComponent implements OnInit {
 
   form = this.formBuilder.group({
-    why: ['', Validators.required],
-    what: ['', Validators.required],
-    withWhom: ['', Validators.required],
-    how: ['', Validators.required]
+    what_you_work_on: ['', Validators.required],
+    what_you_bring: ['', Validators.required],
+    team: ['', Validators.required],
   })
 
   jd_data?: JobDescription
@@ -28,6 +27,7 @@ export class HiringManagerComponent implements OnInit {
     ) {
       this.key = history.state.key
       // load data from DB
+      console.log(this.key)
       this.db.getItem(this.key).subscribe((data) => {
         console.log("data", data);
         // and populate text fields

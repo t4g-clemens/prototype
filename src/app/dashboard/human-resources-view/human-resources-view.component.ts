@@ -23,7 +23,7 @@ export class HumanResourcesViewComponent implements OnInit {
     free_field: ['', Validators.required],
   })
   jd_data?: JobDescription
-  currentStep: number = 0;
+  @ViewChild('stepper') stepper?: MatStepper;
   key: string = ""
 
   constructor(
@@ -42,6 +42,35 @@ export class HumanResourcesViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  hint_page(): string {
+    // hacky switch implementation, could be better
+    let returnValue
+    console.log(this.stepper?.selectedIndex)
+    console.log(this.jd_data)
+    if (this.jd_data !== undefined) {
+      if (this.stepper?.selectedIndex === 1) {
+        // the "what you work on" page
+        returnValue = this.jd_data.hiring_manager_data.what_you_work_on
+      }
+      if (this.stepper?.selectedIndex === 2) {
+        // the "what you bring" page
+        returnValue = this.jd_data.hiring_manager_data.what_you_bring
+      }
+      if (this.stepper?.selectedIndex === 3) {
+        // the "team" page
+        returnValue = this.jd_data.hiring_manager_data.team
+      }
+
+    }
+    console.log("return value", returnValue)
+    if ( returnValue !== undefined ) {
+      return returnValue
+    }
+    else {
+      return ""
+    }
   }
 
   save(): void {

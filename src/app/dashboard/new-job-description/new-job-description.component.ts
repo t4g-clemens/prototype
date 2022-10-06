@@ -48,10 +48,20 @@ export class NewJobDescriptionComponent implements OnInit {
       ...this.form.value,
       stage: "new",
       hiring_manager_data: {
-        why: "default values ...",
-        what: "default values ...",
-        withWhom: "default values ...",
-        how: "default values ..."
+        what_you_work_on: "...",
+        what_you_bring: "...",
+        team: "...",
+      },
+      hr_data: {
+        who_we_are: "...",
+        what_you_work_on: "...",
+        what_you_bring: "...",
+        team: "...",
+        what_you_get: "...",
+        process: "...",
+        legal: "...",
+        disclaimer: "...",
+        free_field: "...",
       }
     }
     this.db.addItem(jd)

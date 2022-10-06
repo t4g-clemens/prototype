@@ -40,7 +40,8 @@
   </mat-form-field>
 </p>
 <button mat-button (click)="onClear()">Cancel</button>
-<button mat-button (click)="onSave()">Save</button>
-<button mat-button (click)="onSubmitToDepartment()">Submit</button>
+<button mat-button *ngIf="key === ''" (click)="onCreate()">Create</button>
+<button mat-button *ngIf="key !== ''" (click)="onSave()">Save</button>
+<button mat-button *ngIf="key !== ''" (click)="onSubmitToDepartment()">Submit</button>
 </form>
 </div>

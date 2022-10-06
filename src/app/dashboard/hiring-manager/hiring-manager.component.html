@@ -2,13 +2,13 @@
 <div class="stepperContainer">
 <mat-stepper headerPosition="bottom"  #stepper>
   <mat-step>
-    <div class="mat-title">Warum {{ key }}</div>
+    <div class="mat-title">Daran arbeitest du</div>
     <div class="empathyBox">to be filled ...</div>
     <form [formGroup]="form">
-      <ng-template matStepLabel>Warum</ng-template>
+      <ng-template matStepLabel>Daran arbeitest du</ng-template>
       <mat-form-field appearance="fill">
         <mat-label>Name this is new</mat-label>
-        <textarea matInput rows="6" formControlName="why" placeholder="..."></textarea>
+        <textarea matInput rows="6" formControlName="what_you_work_on" placeholder="..."></textarea>
       </mat-form-field>
       <div>
         <button mat-button matStepperNext>Next</button>
@@ -17,29 +17,13 @@
   </mat-step>
   <mat-step>
     <form [formGroup]="form">
-      <div class="mat-title">Woran</div>
+      <div class="mat-title">Das bringst du mit</div>
       <div class="empathyBox">to be filled ...</div>
 
-      <ng-template matStepLabel>Woran</ng-template>
+      <ng-template matStepLabel>Das bringst du mit</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>Woran wird gearbeitet</mat-label>
-        <textarea matInput rows="6" formControlName="what" placeholder="..."></textarea>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <form [formGroup]="form">
-      <div class="mat-title">Mit Wem</div>
-      <div class="empathyBox">to be filled ...</div>
-
-      <ng-template matStepLabel>Mit Wem</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Mit Wem wird gearbeitet</mat-label>
-        <textarea matInput rows="6" formControlName="withWhom" placeholder="..."></textarea>
+        <mat-label>Das bringst du mit</mat-label>
+        <textarea matInput rows="6" formControlName="what_you_bring" placeholder="..."></textarea>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
@@ -49,13 +33,13 @@
   </mat-step>
   <mat-step>
     <form [formGroup]="form">
-      <div class="mat-title">Wie</div>
+      <div class="mat-title">Team</div>
       <div class="empathyBox">to be filled ...</div>
 
-      <ng-template matStepLabel>Wie</ng-template>
+      <ng-template matStepLabel>Team</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>Wie wird gearbeitet</mat-label>
-        <textarea matInput rows="6" formControlName="how" placeholder="..."></textarea>
+        <mat-label>Team</mat-label>
+        <textarea matInput rows="6" formControlName="team" placeholder="..."></textarea>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
