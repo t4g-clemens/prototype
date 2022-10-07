@@ -19,10 +19,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 
-import { SectionComponent } from './section/section.component';
-import { SectionListComponent } from './section-list/section-list.component';
-import { ExampleComponent } from './example/example.component';
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
@@ -41,9 +37,6 @@ import { HumanResourcesViewComponent } from './dashboard/human-resources-view/hu
 @NgModule({
   declarations: [
     AppComponent,
-    SectionComponent,
-    SectionListComponent,
-    ExampleComponent,
     LoginscreenComponent,
     ListoverviewComponent,
     NavigationComponent,
