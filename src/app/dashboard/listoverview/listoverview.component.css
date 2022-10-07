@@ -7,3 +7,9 @@
 .mat-title {
   margin-top: 50px;
 }
+
+.mat-list-item {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.374);
+}
