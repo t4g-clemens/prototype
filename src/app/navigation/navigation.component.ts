@@ -26,6 +26,10 @@ export class NavigationComponent {
       this.auth.logout().subscribe( () => { this.router.navigate(['login']) } )
     }
 
+  onRoleChange() {
+    this.router.navigate(['home/dashboard'])
+  }
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     public auth: AuthenticationService,

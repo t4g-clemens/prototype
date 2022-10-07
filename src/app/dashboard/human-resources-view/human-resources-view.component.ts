@@ -47,8 +47,6 @@ export class HumanResourcesViewComponent implements OnInit {
   hint_page(): string {
     // hacky switch implementation, could be better
     let returnValue
-    console.log(this.stepper?.selectedIndex)
-    console.log(this.jd_data)
     if (this.jd_data !== undefined) {
       if (this.stepper?.selectedIndex === 1) {
         // the "what you work on" page
@@ -64,7 +62,6 @@ export class HumanResourcesViewComponent implements OnInit {
       }
 
     }
-    console.log("return value", returnValue)
     if ( returnValue !== undefined ) {
       return returnValue
     }
