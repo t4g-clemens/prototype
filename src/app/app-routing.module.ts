@@ -15,29 +15,31 @@ const redirectLoggedIn = () => redirectLoggedInTo(['home'])
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: "full"},
-  { path: 'login', component: LoginscreenComponent, ...canActivate(redirectLoggedIn)},
-  { path: 'home', component: NavigationComponent, ...canActivate(redirectToLogin),
+  // { path: 'login', component: LoginscreenComponent, ...canActivate(redirectLoggedIn)},
+  // { path: 'home', component: NavigationComponent, ...canActivate(redirectToLogin),
+  { path: 'login', component: LoginscreenComponent},
+  { path: 'home', component: NavigationComponent,
   children : [
     {
       path: 'dashboard',
       pathMatch: 'full',
       component: ListoverviewComponent,
-      ...canActivate(redirectToLogin)
+      // ...canActivate(redirectToLogin)
     },
     {
       path: 'hiringmanager',
       component: HiringManagerComponent,
-      ...canActivate(redirectToLogin)
+      // ...canActivate(redirectToLogin)
     },
     {
       path: 'newjobdescription',
       component: NewJobDescriptionComponent,
-      ...canActivate(redirectToLogin)
+      // ...canActivate(redirectToLogin)
     },
     {
       path: 'recruitment',
       component: HumanResourcesViewComponent,
-      ...canActivate(redirectToLogin)
+      // ...canActivate(redirectToLogin)
     },
   ]}
 ];

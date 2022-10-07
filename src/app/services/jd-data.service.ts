@@ -30,4 +30,8 @@ export class JdDataService {
   addItem(item: JobDescription) {
     this.items.push(item).then(() => {console.log('added', item)})
   }
+
+  deleteItem(key: string) {
+    return this.db.object(`items/${key}`).remove()
+  }
 }

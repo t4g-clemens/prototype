@@ -1,5 +1,4 @@
 import { Component, OnInit, Input,Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
@@ -32,6 +31,10 @@ export class LoginscreenComponent implements OnInit {
       console.log('login error')
       this.form.controls['password'].setErrors({'incorrect': true});
     });
+  }
+
+  fakeSubmit() {
+    this.router.navigate(['/home/dashboard'])
   }
 
 }

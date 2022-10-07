@@ -55,4 +55,8 @@ export class ListoverviewComponent implements OnInit {
     this.router.navigate(['/home/recruitment'], {state: {key: key}})
     console.log(key)
   }
+
+  onDeleteJobDescription(key: string): void {
+    this.db.deleteItem(key)
+  }
 }
