@@ -9,7 +9,42 @@
 }
 
 .mat-list-item {
-  margin-top: 5px;
+  margin-top: 10px;
+  /* padding: 20px; */
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.174);
+}
+
+.tmp {
+  width: 100%;
+  /* display: flex;
+  align-content: space-between; */
+  /* float: inline-end */
+}
+
+.spacer {
+  flex-grow: 1;
+  background-color: bisque;
+}
+
+.lineItem {
+  /* display: inline; */
+  /* align-content: space-between; */
+  /* background-color: aqua; */
+  /* border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.374); */
+}
+
+.lineBorder {
+  display: flex;
+  align-content: space-between;
+  background-color: aquamarine;
+  padding: 15px;
   border-radius: 5px;
   border: 2px solid rgb(98, 98, 98, 0.374);
+}
+
+.heightSpacer {
+  height: 100px
 }

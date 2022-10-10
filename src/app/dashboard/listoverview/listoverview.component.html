@@ -3,57 +3,80 @@
   <button mat-fab color="primary" (click)="onAddJobDescription()"><mat-icon>add</mat-icon>
   </button>
 </div>
-
 <div class="mat-title">Neue Stellen</div>
-<mat-list role="list">
+<mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'new'" role="listitem" (click)="openToEditNewJD(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'new'" role="listitem" >
+    <a matLine (click)="openToEditNewJD(item.key)">{{ item.id }}</a>
+    <button mat-icon-button>
+      <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
+   </button>
+  </mat-list-item>
   </div>
-</mat-list>
+</mat-nav-list>
 <div class="mat-title">In Bearbeitung durch Fachabteilung</div>
-<mat-list role="list">
+<mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditNewJD(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" >
+    <a matLine (click)="openToEditNewJD(item.key)">{{ item.id }}</a>
+    <button mat-icon-button>
+      <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
+   </button>
+  </mat-list-item>
   </div>
-</mat-list>
+</mat-nav-list>
 <div class="mat-title">Fertiggestellt durch Fachabteilung</div>
-<mat-list role="list">
+<mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" >
+    <a matLine (click)="openToEditByHr(item.key)">{{ item.id }}</a>
+    <button mat-icon-button>
+      <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
+   </button>
+  </mat-list-item>
   </div>
-</mat-list>
+</mat-nav-list>
 <div class="mat-title">In Bearbeitung durch Personalabteilung</div>
-<mat-list role="list">
+<mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'in_edit_by_hr'" role="listitem" (click)="openToEditByHr(item.key)">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'in_edit_by_hr'" role="listitem" >
+    <a matLine (click)="openToEditByHr(item.key)">{{ item.id }}</a>
+    <button mat-icon-button>
+      <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
+   </button>
+  </mat-list-item>
   </div>
-</mat-list>
+</mat-nav-list>
 <div class="mat-title">Fertiggestellt</div>
-<mat-list role="list">
+<mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'finished'" role="listitem">{{ item.id }}</mat-list-item>
+  <mat-list-item *ngIf="item.stage === 'finished'" role="listitem" >
+    <a matLine (click)="openToEditByHr(item.key)">{{ item.id }}</a>
+  </mat-list-item>
   </div>
-</mat-list>
+</mat-nav-list>
+<div class="heightSpacer"></div>
 </div>
 
 <div *ngIf="userRoleService.getUserRole() === 'department'" class="list-container">
 
   <div class="mat-title">Neue Stellen</div>
-  <mat-list role="list">
+  <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'send_to_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
-  </mat-list>
+  </mat-nav-list>
   <div class="mat-title">In Bearbeitung</div>
-  <mat-list role="list">
+  <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
-  </mat-list>
+  </mat-nav-list>
   <div class="mat-title">Fertiggestellt</div>
-  <mat-list role="list">
+  <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
-  </mat-list>
+  </mat-nav-list>
+  <div class="heightSpacer"></div>
   </div>
