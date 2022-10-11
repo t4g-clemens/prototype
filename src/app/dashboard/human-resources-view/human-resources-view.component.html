@@ -1,6 +1,6 @@
 <div class="mainContainer">
   <div class="stepperContainer">
-  <mat-stepper headerPosition="bottom" labelPosition="bottom" #stepper>
+    <mat-stepper headerPosition="bottom" labelPosition="bottom" #stepper>
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Deine Aufgabe</div>
@@ -12,11 +12,13 @@
           <mat-label>Deine Aufgabe</mat-label>
           <textarea matInput rows="6" formControlName="what_you_work_on" placeholder="..."></textarea>
         </mat-form-field>
+
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Dein Profil</div>
@@ -34,6 +36,7 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Dein Team</div>
@@ -89,14 +92,17 @@
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Jobtitel</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Bewerbenden möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.
+
+          <p>An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen
+          Bitte nicht mit behördlichen Funktionsbezeichungen arbeiten</p></div>
 
         <!-- <ng-template matStepLabel>Jobtitel</ng-template> -->
         <mat-form-field appearance="fill">
           <mat-label>Jobtitel</mat-label>
           <input matInput formControlName="title" placeholder="...">
         </mat-form-field>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.</div>
         <mat-form-field appearance="fill">
           <mat-label>Zusammenfassung</mat-label>
           <textarea matInput rows="4" formControlName="summary" placeholder="..."></textarea>
@@ -191,14 +197,15 @@
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="save()">Save</button>
-          <button mat-button>Vorschau</button>
+          <button mat-button (click)="preview()">Vorschau</button>
           <button mat-button (click)="finish()">Fertigstellen</button>
         </div>
       </form>
     </mat-step>
-  </mat-stepper>
+
+    </mat-stepper>
   </div>
   <div class="helpContainer">
     <app-hintbox [stepperIndex]="stepper.selectedIndex"></app-hintbox>
   </div>
-  </div>
+</div>

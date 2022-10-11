@@ -89,14 +89,18 @@
   <mat-step>
     <form [formGroup]="form">
       <div class="mat-title">Jobtitel</div>
-      <div class="empathyBox">to be filled ...</div>
+      <div class="empathyBox">Bewerbenden möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.
+
+        <p>An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen
+        Bitte nicht mit behördlichen Funktionsbezeichungen arbeiten</p>
+        </div>
 
       <ng-template matStepLabel>Jobtitel</ng-template>
       <mat-form-field appearance="fill">
         <mat-label>Jobtitel</mat-label>
         <input matInput formControlName="title" placeholder="...">
       </mat-form-field>
-      <div class="empathyBox">to be filled ...</div>
+      <div class="empathyBox">Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.</div>
       <mat-form-field appearance="fill">
         <mat-label>Zusammenfassung</mat-label>
         <textarea matInput rows="4" formControlName="summary" placeholder="..."></textarea>

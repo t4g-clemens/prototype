@@ -65,36 +65,6 @@ export class HumanResourcesViewComponent implements OnInit {
     }
   }
 
-  // hint_page(): string {
-  //   // hacky switch implementation, could be better
-  //   let returnValue
-  //   if (this.jd_data !== undefined) {
-  //     if (this.stepper?.selectedIndex === 1) {
-  //       // the "what you work on" page
-  //       returnValue = this.jd_data.hiring_manager_data.what_you_work_on
-  //     }
-  //     if (this.stepper?.selectedIndex === 2) {
-  //       // the "what you bring" page
-  //       returnValue = this.jd_data.hiring_manager_data.what_you_bring
-  //     }
-  //     if (this.stepper?.selectedIndex === 3) {
-  //       // the "team" page
-  //       returnValue = this.jd_data.hiring_manager_data.team
-  //     }
-  //     if (this.stepper?.selectedIndex === 5) {
-  //       // the "title" page
-  //       returnValue = this.jd_data.hiring_manager_data.title
-  //     }
-
-  //   }
-  //   if ( returnValue !== undefined ) {
-  //     return returnValue
-  //   }
-  //   else {
-  //     return ""
-  //   }
-  // }
-
   save(): void {
     // end editing and set status of JD to next field
     this.db.getList().update(this.key, {
@@ -112,4 +82,12 @@ export class HumanResourcesViewComponent implements OnInit {
   })
   this.router.navigate(['/home/dashboard'])
 }
+  preview(): void {
+    this.db.getList().update(this.key, {
+      stage: "in_edit_by_hr",
+      hr_data: this.form.value
+    })
+    // this.router.navigate(['/preview'], {queryParams: {key: this.key}})
+    window.open('/preview/?key=' + this.key)
+  }
 }

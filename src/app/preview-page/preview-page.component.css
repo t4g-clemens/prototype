@@ -69,6 +69,7 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
+  white-space: pre-line;
 }
 
 .contentBodyTiles {
@@ -98,6 +99,7 @@
 .contentBodyDoubleTilesText {
   column-count: 2;
   column-gap: 20px;
+  white-space: pre-line;
 }
 
 .secondContact {
