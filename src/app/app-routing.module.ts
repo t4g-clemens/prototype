@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
+import { PreviewPageComponent } from './preview-page/preview-page.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -18,6 +19,11 @@ const routes: Routes = [
   // { path: 'login', component: LoginscreenComponent, ...canActivate(redirectLoggedIn)},
   // { path: 'home', component: NavigationComponent, ...canActivate(redirectToLogin),
   { path: 'login', component: LoginscreenComponent},
+  {
+    path: 'preview',
+    component: PreviewPageComponent,
+    // ...canActivate(redirectToLogin)
+  },
   { path: 'home', component: NavigationComponent,
   children : [
     {
@@ -41,6 +47,7 @@ const routes: Routes = [
       component: HumanResourcesViewComponent,
       // ...canActivate(redirectToLogin)
     },
+
   ]}
 ];
 

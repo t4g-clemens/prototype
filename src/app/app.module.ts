@@ -33,6 +33,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
+import { PreviewPageComponent } from './preview-page/preview-page.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HumanResourcesViewComponent } from './dashboard/human-resources-view/hu
     NewJobDescriptionComponent,
     HiringManagerComponent,
     HumanResourcesViewComponent,
+    PreviewPageComponent,
   ],
   imports: [
     BrowserModule,

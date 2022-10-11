@@ -1,0 +1,110 @@
+.contentContainer {
+  display: grid;
+  /* column-gap: 15px;
+  row-gap: 15px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.headerBanner {
+  background-color: #F4F8FF;
+  grid-column: span 2;
+}
+
+.headerBody {
+  grid-column: span 6;
+  padding: 20px;
+  background-color: #F4F8FF;
+}
+
+.headerTitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  margin-top: 50px;
+  color: #000000;
+}
+
+.headerSummary {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 25px;
+  color: #000000;
+}
+
+.headerDetailsContent {
+  grid-column: span 3;
+  padding: 20px;
+  background-color:#F4F8FF;
+}
+
+.headerDetailsContentBold {
+  font-weight: 700;
+}
+
+.contentBorder {
+  grid-column: span 2;
+}
+
+.contentMainBody {
+  grid-column: span 3;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.contentBodyTitle {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.contentBodyText {
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.contentBodyTiles {
+  padding: 20px;
+  background-color: white;
+  grid-column: span 2;
+}
+
+.contentBodyDoubleTiles {
+  padding: 20px;
+  background-color: white;
+  grid-column: span 4;
+}
+
+.contentBodyTilesBackground {
+  padding: 20px;
+  height: 100%;
+  background-color: #F4F8FF;
+}
+
+.contentBodyDoubleTilesBackground {
+  padding: 20px;
+  height: 100%;
+  background-color: #F4F8FF;
+}
+
+.contentBodyDoubleTilesText {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.secondContact {
+  break-before: column;
+}
+
+.footer {
+  grid-column: span 10;
+  height: 80px;
+}
