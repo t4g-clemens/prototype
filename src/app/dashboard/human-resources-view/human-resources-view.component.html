@@ -2,43 +2,30 @@
   <div class="stepperContainer">
   <mat-stepper headerPosition="bottom" labelPosition="bottom" #stepper>
     <mat-step>
-      <div class="mat-title">Unser Purpose</div>
-      <div class="empathyBox">to be filled ...</div>
       <form [formGroup]="form">
-        <!-- <ng-template matStepLabel>Unser Purpose</ng-template> -->
-        <mat-form-field appearance="fill">
-          <mat-label>Unser Purpose</mat-label>
-          <textarea matInput rows="6" formControlName="who_we_are" placeholder="..."></textarea>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <div class="mat-title">Deine Aufgabe</div>
+        <div class="empathyBox">Reflektiere und beschreibe an dieser Stelle so präzise wie möglich, an welchen Aufgaben und Projekten gearbeitet wird. Dies ist entscheidend für Bewerbende, um nachvollziehen zu können, wie ihre Arbeit auf die Ziele der Behörde einzahlt.
         </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <form [formGroup]="form">
-        <div class="mat-title">Daran arbeitest du</div>
-        <div class="empathyBox">to be filled ...</div>
 
-        <!-- <ng-template matStepLabel>Daran arbeitest du</ng-template> -->
+        <!-- <ng-template matStepLabel>Deine Aufgabe</ng-template> -->
         <mat-form-field appearance="fill">
-          <mat-label>Daran arbeitest du</mat-label>
+          <mat-label>Deine Aufgabe</mat-label>
           <textarea matInput rows="6" formControlName="what_you_work_on" placeholder="..."></textarea>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
       <form [formGroup]="form">
-        <div class="mat-title">Das bringst du mit</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="mat-title">Dein Profil</div>
+        <div class="empathyBox">Bewerbende möchten wissen, welche Qualifikationen sie mitbringen müssen und welche Fähigkeiten darüber hinaus für diese Stelle hilfreich wären.<br>
+          Reflektiere, was wirklich wichtig für diese Stelle ist, wie die Qualifikationen und Fähigkeiten auf das Tätigkeitsziel der Position einzahlen und beschreibe dies in wenigen Sätzen. </div>
 
-        <!-- <ng-template matStepLabel>Das bringst du mit</ng-template> -->
+        <!-- <ng-template matStepLabel>Dein Profil</ng-template> -->
         <mat-form-field appearance="fill">
-          <mat-label>Das bringst du mit</mat-label>
+          <mat-label>Dein Profil</mat-label>
           <textarea matInput rows="6" formControlName="what_you_bring" placeholder="..."></textarea>
         </mat-form-field>
         <div>
@@ -50,7 +37,8 @@
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Dein Team</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Beschreibe für diesen Absatz, mit welchen Rollen und Persönlichkeiten die Bewerbenden zusammenarbeiten und in Kontakt kommen. Besonders die Teamstruktur und Vorgesetzte können ausschlaggebend für eine Bewerbung sein.
+        </div>
 
         <!-- <ng-template matStepLabel>Dein Team</ng-template> -->
         <mat-form-field appearance="fill">
@@ -63,14 +51,15 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
-        <div class="mat-title">Das erwartet dich</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="mat-title">Unsere Arbeit</div>
+        <div class="empathyBox">Die Art der Zusammenarbeit im Team ist für Bewerbende sehr wichtig. Zeige auf, wie ihr arbeitet und welche Management- und Projektmethoden bei euch eine wichtige Rolle spielen. </div>
 
-        <!-- <ng-template matStepLabel>Das erwartet dich</ng-template> -->
+        <!-- <ng-template matStepLabel>Unsere Arbeit</ng-template> -->
         <mat-form-field appearance="fill">
-          <mat-label>Das erwartet dich</mat-label>
+          <mat-label>Unsere Arbeit</mat-label>
           <textarea matInput rows="6" formControlName="what_you_get" placeholder="..."></textarea>
         </mat-form-field>
         <div>
@@ -79,10 +68,69 @@
         </div>
       </form>
     </mat-step>
+
+    <mat-step>
+      <form [formGroup]="form">
+        <div class="mat-title">Dein Purpose bei uns</div>
+        <div class="empathyBox">Formuliere in wenigen Sätzen, wie die Bewerbenden in ihrer zukünftigen Position einen Mehrwert für ihr Referat bieten. Wie zahlen sie damit auf die einzelnen Ziele der Behörde ein?</div>
+
+        <!-- <ng-template matStepLabel>Dein Purpose bei uns</ng-template> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Dein Purpose bei uns</mat-label>
+          <textarea matInput rows="6" formControlName="purpose" placeholder="..."></textarea>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <form [formGroup]="form">
+        <div class="mat-title">Jobtitel</div>
+        <div class="empathyBox">to be filled ...</div>
+
+        <!-- <ng-template matStepLabel>Jobtitel</ng-template> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Jobtitel</mat-label>
+          <input matInput formControlName="title" placeholder="...">
+        </mat-form-field>
+        <div class="empathyBox">to be filled ...</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Zusammenfassung</mat-label>
+          <textarea matInput rows="4" formControlName="summary" placeholder="..."></textarea>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <form [formGroup]="form">
+        <div class="mat-title">Benefits</div>
+        <div class="empathyBox">Welche Benefits bietet ihr als Behörde? Welche Besonderheiten bietet ihr über die Rahmenbedingungen des öffentlichen Dienstes hinaus? Verschaffe den Bewerbenden mithilfe von konkreten Beispielen einen nachvollziehbaren Einblick.
+        </div>
+
+        <!-- <ng-template matStepLabel>Benefits</ng-template> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Benefits</mat-label>
+          <textarea matInput rows="6" formControlName="benefits" placeholder="..."></textarea>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Bewerbungsprozess</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Der Bewerbungsprozess im öffentlichen Dienst übersteigt die Dauer einer Bewerbung auf dem Arbeitsmarkt deutlich. Eine klare Kommunikation des Bewerbungsablaufs fördert Verständnis und Geduld beim Bewerbenden. Beschreibe, welchen Weg eine Bewerbung geht.
+        </div>
 
         <!-- <ng-template matStepLabel>Bewerbungsprozess</ng-template> -->
         <mat-form-field appearance="fill">
@@ -95,10 +143,11 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Rechtliches</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Bewerbenden möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.</div>
 
         <!-- <ng-template matStepLabel>Rechtliches</ng-template> -->
         <mat-form-field appearance="fill">
@@ -111,6 +160,7 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Disclaimer</div>
@@ -127,10 +177,11 @@
         </div>
       </form>
     </mat-step>
+
     <mat-step>
       <form [formGroup]="form">
         <div class="mat-title">Freifeld</div>
-        <div class="empathyBox">to be filled ...</div>
+        <div class="empathyBox">Ergänze zusätzliche Informationen</div>
 
         <!-- <ng-template matStepLabel>Freifeld</ng-template> -->
         <mat-form-field appearance="fill">
@@ -148,13 +199,6 @@
   </mat-stepper>
   </div>
   <div class="helpContainer">
-    <div class="hintBox" *ngIf="hint_page() === ''">to be filled ...</div>
-    <div *ngIf="hint_page() !== ''">
-      <div class="smallHintBox">to be filled ... xx </div>
-      <div class="departmentInput">
-        <div class="mat-subheading-1">Input der Fachabteilung</div>
-        <p>{{ hint_page() }}</p>
-      </div>
-    </div>
+    <app-hintbox [stepperIndex]="stepper.selectedIndex"></app-hintbox>
   </div>
   </div>

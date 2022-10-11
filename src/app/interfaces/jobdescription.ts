@@ -2,6 +2,10 @@ export interface HiringManagerData {
   what_you_work_on: string,
   what_you_bring: string,
   team: string,
+  how_we_work: string,
+  title: string,
+  summary: string,
+  impact_in_work: string,
 }
 
 export interface HRData {
@@ -9,11 +13,16 @@ export interface HRData {
   what_you_work_on: string,
   what_you_bring: string,
   team: string,
+  how_we_work: string,
   what_you_get: string,
   process: string,
+  benefits: string,
   legal: string,
   disclaimer: string,
   free_field: string,
+  title: string,
+  summary: string,
+  purpose: string,
 }
 
 export interface JobDescription {

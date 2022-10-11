@@ -1,0 +1,7 @@
+.hintBox {
+  padding: 30px;
+  margin-bottom: 25px;
+  /* height: 450px; */
+  border-radius: 5px;
+  border: 2px solid rgb(98, 98, 98, 0.374);
+}
