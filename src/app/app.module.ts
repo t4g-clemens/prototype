@@ -36,6 +36,7 @@ import { HumanResourcesViewComponent } from './dashboard/human-resources-view/hu
 import { HintboxComponent } from './dashboard/hintbox/hintbox.component';
 import { HrHintsComponent } from './dashboard/hintbox/hr-hints/hr-hints.component';
 import { DepartmentHintsComponent } from './dashboard/hintbox/department-hints/department-hints.component';
+import { PreviewPageComponent } from './preview-page/preview-page.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { DepartmentHintsComponent } from './dashboard/hintbox/department-hints/d
     HintboxComponent,
     HrHintsComponent,
     DepartmentHintsComponent,
+    PreviewPageComponent,
   ],
   imports: [
     BrowserModule,
