@@ -36,7 +36,7 @@ export class ListoverviewComponent implements OnInit {
 
   openToEditByDepartment(key: string) {
     // open hiring manager view to fill in  department fields
-    this.router.navigate(['/home/hiringmanager'], {state: {key: key}})
+    this.router.navigate(['/home/department'], {state: {key: key}})
     console.log(key)
   }
 

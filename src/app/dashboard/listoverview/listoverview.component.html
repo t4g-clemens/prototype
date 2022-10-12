@@ -1,9 +1,15 @@
-<div *ngIf="userRoleService.getUserRole() === 'human_resources'" class="list-container">
-<div align="end">
-  <button mat-fab color="primary" (click)="onAddJobDescription()"><mat-icon>add</mat-icon>
-  </button>
-</div>
-<div class="mat-title">Neue Stellen</div>
+<div class="mainContainer">
+<div class="listContainer">
+
+<div *ngIf="userRoleService.getUserRole() === 'human_resources'">
+
+<div class="sectionContainer">
+    <div align="end">
+      <button mat-fab color="primary" (click)="onAddJobDescription()"><mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+<div class="title">Neue Stellen</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'new'" role="listitem" >
@@ -14,7 +20,11 @@
   </mat-list-item>
   </div>
 </mat-nav-list>
-<div class="mat-title">In Bearbeitung durch Fachabteilung</div>
+</div>
+
+
+<div class="sectionContainer">
+<div class="title">In Bearbeitung durch Fachabteilung</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" >
@@ -25,7 +35,10 @@
   </mat-list-item>
   </div>
 </mat-nav-list>
-<div class="mat-title">Fertiggestellt durch Fachabteilung</div>
+</div>
+
+<div class="sectionContainer">
+<div class="title">Fertiggestellt durch Fachabteilung</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" >
@@ -36,7 +49,10 @@
   </mat-list-item>
   </div>
 </mat-nav-list>
-<div class="mat-title">In Bearbeitung durch Personalabteilung</div>
+</div>
+
+<div class="sectionContainer">
+<div class="title">In Bearbeitung durch Personalabteilung</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'in_edit_by_hr'" role="listitem" >
@@ -47,7 +63,10 @@
   </mat-list-item>
   </div>
 </mat-nav-list>
-<div class="mat-title">Fertiggestellt</div>
+</div>
+
+<div class="sectionContainer">
+<div class="title">Fertiggestellt</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'finished'" role="listitem" >
@@ -55,28 +74,44 @@
   </mat-list-item>
   </div>
 </mat-nav-list>
+</div>
+
 <div class="heightSpacer"></div>
 </div>
 
-<div *ngIf="userRoleService.getUserRole() === 'department'" class="list-container">
 
-  <div class="mat-title">Neue Stellen</div>
+<div *ngIf="userRoleService.getUserRole() === 'department'">
+
+<div class="sectionContainer">
+  <div class="title">Neue Stellen</div>
   <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'send_to_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
   </mat-nav-list>
-  <div class="mat-title">In Bearbeitung</div>
+</div>
+
+<div class="sectionContainer">
+  <div class="title">In Bearbeitung</div>
   <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
   </mat-nav-list>
-  <div class="mat-title">Fertiggestellt</div>
+</div>
+
+<div class="sectionContainer">
+  <div class="title">Fertiggestellt</div>
   <mat-nav-list role="list">
     <div  *ngFor="let item of jds">
     <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
     </div>
   </mat-nav-list>
+</div>
+
   <div class="heightSpacer"></div>
-  </div>
+
+</div>
+
+</div>
+</div>
