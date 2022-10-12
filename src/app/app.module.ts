@@ -37,8 +37,9 @@ import { HintboxComponent } from './dashboard/hintbox/hintbox.component';
 import { HrHintsComponent } from './dashboard/hintbox/hr-hints/hr-hints.component';
 import { DepartmentHintsComponent } from './dashboard/hintbox/department-hints/department-hints.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
-import { StepperComponent } from './stepper/stepper.component';
-import { StepperDotComponent } from './stepper/stepper-dot/stepper-dot.component';
+import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';
+import { StepperComponentHR } from './dashboard/human-resources-view/stepper/stepper.component';
+import { StepperDotComponent } from './dashboard/department-view/stepper/stepper-dot/stepper-dot.component';
 import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
 import { ContentComponent } from './dashboard/department-view/content/content.component';
 
@@ -56,6 +57,7 @@ import { ContentComponent } from './dashboard/department-view/content/content.co
     DepartmentHintsComponent,
     PreviewPageComponent,
     StepperComponent,
+    StepperComponentHR,
     StepperDotComponent,
     DepartmentViewComponent,
     ContentComponent,

@@ -8,7 +8,7 @@ import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
-import { StepperComponent } from './stepper/stepper.component';
+import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';
 import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
 
 
@@ -36,6 +36,11 @@ const routes: Routes = [
     component: DepartmentViewComponent,
     // ...canActivate(redirectToLogin)
   },
+  {
+    path: 'recruitment',
+    component: HumanResourcesViewComponent,
+    // ...canActivate(redirectToLogin)
+  },
   { path: 'home', component: NavigationComponent,
   children : [
     {
@@ -46,7 +51,7 @@ const routes: Routes = [
     },
     {
       path: 'hiringmanager',
-      component: HiringManagerComponent,
+      component: DepartmentViewComponent,
       // ...canActivate(redirectToLogin)
     },
     {
