@@ -4,10 +4,10 @@
       <app-content
         [title]="displayData[stepper.index].title"
         [text]="displayData[stepper.index].text"
-        [imageUrl]="displayData[stepper.index].imageUrl"
-        [textareaLabel]="displayData[stepper.index].textareaLabel">
+        [imageUrl]="displayData[stepper.index].imageUrl">
       </app-content>
-
+      <div class="spacer"></div>
+      <div class="textareaLabel">{{ displayData[stepper.index].textareaLabel }}</div>
       <form [formGroup]="form">
         <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0"></textarea>
         <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1"></textarea>
@@ -17,9 +17,7 @@
         <textarea rows="6" formControlName="title" *ngIf="stepper.index == 5"></textarea>
         <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6"></textarea>
       </form>
-
     </div>
-    <div class="spacer"></div>
     <span class="buttonBar">
       <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
       <span class="spacer"></span>
