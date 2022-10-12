@@ -1,12 +1,70 @@
-.formContainer {
-  margin: 100px;
-  width: 55%
+.mainContainer {
+  display: grid;
+  grid-template-columns: 55% auto;
+  height: calc(100% - 50px);
+  background-color: rgb(236, 220, 250);
 }
 
-.mat-form-field {
-  margin-left: 80px;
+.helpContainer {
+  grid-column: span 1;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
 }
 
-.areaField {
-  min-width: 400px;
+
+.title {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #23036A;
+  /* margin-left: 70px; */
+}
+
+.stepperContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: inherit;
+  grid-column: span 1;
+  background-color: white;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.stepperContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 50px;
+  width: 75%;
+  height: 100%;
+  margin-left: 15%;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.buttonBar {
+  display: flex;
+  align-content: flex-end;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.mat-raised-button {
+  margin-left: 15px;
+}
+
+.inputLine {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
 }

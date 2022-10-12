@@ -1,10 +1,16 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .line {
   display: flex;
 }
 
 .empathyBox {
   padding-left: 20px;
-  height: 200px;
+  /* height: 200px; */
   /* border-radius: 5px; */
   /* border: 2px solid rgba(98, 98, 98, 0.374); */
 }
@@ -37,14 +43,6 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-.textareaLabel {
-  margin-top: 30px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  /* identical to box height, or 133% */
-  letter-spacing: 0.4px;
-
-  /* 01. Primary/900 */
-  color: #23036A;
+.spacer {
+  flex: 1;
 }

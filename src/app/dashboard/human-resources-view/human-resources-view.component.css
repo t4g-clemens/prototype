@@ -52,7 +52,7 @@
 .stepperContainer {
   margin-top: 20px;
   margin-bottom: 20px;
-  height: auto;
+  height: inherit;
   grid-column: span 1;
   background-color: white;
   border-radius: 0px 15px 15px 0px;
@@ -62,9 +62,12 @@
 }
 
 .stepperContent {
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
-  margin-left: 90px;
-  margin-right: 94px;
+  width: 75%;
+  height: 100%;
+  margin-left: 15%;
 }
 
 .inputArea{
@@ -79,9 +82,7 @@
   display: flex;
   align-content: flex-end;
   justify-content: end;
-  margin-right: 96px;
   margin-bottom: 20px;
-  margin-left: 85px;
 }
 
 .mat-raised-button {
@@ -89,9 +90,6 @@
 }
 
 .stepper {
-  width: auto;
-  margin-left: 90px;
-  margin-right: 94px;
   margin-bottom: 64px;
 }
 
@@ -116,9 +114,22 @@ textarea {
   line-height: 24px;
   /* identical to box height, or 150% */
   letter-spacing: 0.15px;
+  margin-bottom: 20px;
 }
 
 textarea:focus {
   outline: none !important;
   box-shadow: 0 0 3px #23036A;
+}
+
+.textareaLabel {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.4px;
+
+  /* 01. Primary/900 */
+  color: #23036A;
 }

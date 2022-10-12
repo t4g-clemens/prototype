@@ -1,47 +1,52 @@
-<div class="formContainer">
-<form [formGroup]="form">
-<p>
-  <mat-form-field appearance="fill">
-    <input type="username" matInput placeholder="Ausschreibungsnummer" formControlName="id">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <input type="username" matInput placeholder="Ort" formControlName="location">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Bewerbungsfrist" formControlName="application_deadline">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Einstellungsdatum" formControlName="start_date">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Beschäftigungsart" formControlName="employment_type">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Vergütung" formControlName="compensation">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Bildungsabschluss" formControlName="education">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <input matInput placeholder="Website" formControlName="website">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="fill">
-    <textarea matInput rows="5" placeholder="Notizen" formControlName="notes" class="areaField">
-      testasdf
-    </textarea>
-  </mat-form-field>
-</p>
-<button mat-button (click)="onClear()">Cancel</button>
-<button mat-button *ngIf="key === ''" (click)="onCreate()">Create</button>
-<button mat-button *ngIf="key !== ''" (click)="onSave()">Save</button>
-<button mat-button *ngIf="key !== ''" (click)="onSubmitToDepartment()">Submit</button>
-</form>
+<div class="mainContainer">
+  <div class="stepperContainer">
+    <div class="stepperContent">
+    <div class="title">Neue Stelle erstellen</div>
+    <form [formGroup]="form">
+      <span class="inputLine">
+        <mat-form-field >
+          <input type="username" matInput placeholder="Ausschreibungsnummer" formControlName="id">
+        </mat-form-field>
+        <mat-form-field >
+          <input type="username" matInput placeholder="Ort" formControlName="location">
+        </mat-form-field>
+      </span>
+      <span class="inputLine">
+        <mat-form-field >
+          <input matInput placeholder="Bewerbungsfrist" formControlName="application_deadline">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput placeholder="Einstellungsdatum" formControlName="start_date">
+        </mat-form-field>
+      </span>
+      <span class="inputLine">
+        <mat-form-field >
+          <input matInput placeholder="Beschäftigungsart" formControlName="employment_type">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput placeholder="Vergütung" formControlName="compensation">
+        </mat-form-field>
+      </span>
+      <span class="inputLine">
+        <mat-form-field >
+          <input matInput placeholder="Bildungsabschluss" formControlName="education">
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput placeholder="Website" formControlName="website">
+        </mat-form-field>
+      </span>
+    </form>
+    <!-- <div class="spacer"></div> -->
+    <span class="buttonBar">
+      <button mat-raised-button color="primary" (click)="onClear()">Cancel</button>
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary" *ngIf="key === ''" (click)="onCreate()">Create</button>
+      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSave()">Save</button>
+      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSubmitToDepartment()">Submit</button>
+    </span>
+  </div>
+</div>
+  <div class="helpContainer">
+
+  </div>
 </div>

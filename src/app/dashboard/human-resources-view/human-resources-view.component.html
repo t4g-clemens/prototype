@@ -1,6 +1,7 @@
 <div class="mainContainer">
   <div class="stepperContainer">
     <div class="stepperContent">
+
       <app-content
         [title]="displayData[stepper.index].title"
         [text]="displayData[stepper.index].text"
@@ -8,6 +9,9 @@
         [textareaLabel]="displayData[stepper.index].textareaLabel">
       </app-content>
 
+      <div class="spacer"></div>
+
+      <div class="textareaLabel">{{ displayData[stepper.index].textareaLabel }}</div>
       <form [formGroup]="form">
         <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0"></textarea>
         <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1"></textarea>
@@ -21,8 +25,8 @@
         <textarea rows="6" formControlName="legal" *ngIf="stepper.index == 9"></textarea>
       </form>
 
-    </div>
-    <div class="spacer"></div>
+
+    <!-- <div class="spacer"></div> -->
     <span class="buttonBar">
       <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
       <span class="spacer"></span>
@@ -32,6 +36,7 @@
       <button mat-raised-button color="primary" (click)="finish()" *ngIf="stepper.index == 9">FERTIGSTELLEN</button>
     </span>
     <app-stepper-HR #stepper class="stepper"></app-stepper-HR>
+  </div>
   </div>
   <div class="helpContainer">
     <div class="hints">
