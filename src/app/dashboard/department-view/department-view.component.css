@@ -1,22 +1,24 @@
 .mainContainer {
   display: grid;
   grid-template-columns: 55% auto;
-  height: 100%;
+  height: calc(100% - 50px);
   background-color: rgb(236, 220, 250);
 }
 
 .helpContainer {
   grid-column: span 1;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
 }
 
 .hints {
+  /* margin-top: 40px; */
   width: 100%;
+  margin-bottom: 40px;
   background-color: white;
   border-radius: 15px 0px 0px 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -48,8 +50,9 @@
 }
 
 .stepperContainer {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: inherit;
   grid-column: span 1;
   background-color: white;
   border-radius: 0px 15px 15px 0px;
@@ -59,11 +62,12 @@
 }
 
 .stepperContent {
-  justify-content: end;
-  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
-  margin-left: 90px;
-  margin-right: 94px;
+  width: 75%;
+  height: 100%;
+  margin-left: 15%;
 }
 
 .inputArea{
@@ -78,9 +82,7 @@
   display: flex;
   align-content: flex-end;
   justify-content: end;
-  margin-right: 96px;
-  margin-bottom: 40px;
-  margin-left: 85px;
+  margin-bottom: 20px;
 }
 
 .mat-raised-button {
@@ -88,14 +90,10 @@
 }
 
 .stepper {
-  /* position: absolute;
-  bottom: 60px; */
-  /* background-color: yellow; */
-  width: auto;
-  margin-left: 90px;
-  margin-right: 94px;
   margin-bottom: 64px;
 }
+
+
 
 textarea {
   margin-top: 4px;
@@ -116,9 +114,22 @@ textarea {
   line-height: 24px;
   /* identical to box height, or 150% */
   letter-spacing: 0.15px;
+  margin-bottom: 20px;
 }
 
 textarea:focus {
   outline: none !important;
   box-shadow: 0 0 3px #23036A;
+}
+
+.textareaLabel {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.4px;
+
+  /* 01. Primary/900 */
+  color: #23036A;
 }

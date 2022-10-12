@@ -64,7 +64,7 @@
 .stepperContent {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 40px;
   width: 75%;
   height: 100%;
   margin-left: 15%;
@@ -92,8 +92,6 @@
 .stepper {
   margin-bottom: 64px;
 }
-
-
 
 textarea {
   margin-top: 4px;

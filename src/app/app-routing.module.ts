@@ -31,16 +31,6 @@ const routes: Routes = [
     component: StepperComponent,
     // ...canActivate(redirectToLogin)
   },
-  {
-    path: 'department',
-    component: DepartmentViewComponent,
-    // ...canActivate(redirectToLogin)
-  },
-  {
-    path: 'recruitment',
-    component: HumanResourcesViewComponent,
-    // ...canActivate(redirectToLogin)
-  },
   { path: 'home', component: NavigationComponent,
   children : [
     {
@@ -50,13 +40,8 @@ const routes: Routes = [
       // ...canActivate(redirectToLogin)
     },
     {
-      path: 'hiringmanager',
+      path: 'department',
       component: DepartmentViewComponent,
-      // ...canActivate(redirectToLogin)
-    },
-    {
-      path: 'newjobdescription',
-      component: NewJobDescriptionComponent,
       // ...canActivate(redirectToLogin)
     },
     {
@@ -64,7 +49,11 @@ const routes: Routes = [
       component: HumanResourcesViewComponent,
       // ...canActivate(redirectToLogin)
     },
-
+    {
+      path: 'newjobdescription',
+      component: NewJobDescriptionComponent,
+      // ...canActivate(redirectToLogin)
+    },
   ]}
 ];
 

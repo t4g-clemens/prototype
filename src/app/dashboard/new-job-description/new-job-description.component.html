@@ -38,11 +38,11 @@
     </form>
     <!-- <div class="spacer"></div> -->
     <span class="buttonBar">
-      <button mat-raised-button color="primary" (click)="onClear()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onClear()">ZURÜCK</button>
       <span class="spacer"></span>
-      <button mat-raised-button color="primary" *ngIf="key === ''" (click)="onCreate()">Create</button>
-      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSave()">Save</button>
-      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSubmitToDepartment()">Submit</button>
+      <button mat-raised-button color="primary" *ngIf="key === ''" (click)="onCreate()">ERSTELLEN</button>
+      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSave()">SICHERN</button>
+      <button mat-raised-button color="primary" *ngIf="key !== ''" (click)="onSubmitToDepartment()">AN FACHABTEILUNG SENDEN</button>
     </span>
   </div>
 </div>
