@@ -1,0 +1,11 @@
+.line {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  flex-grow: 1;
+  border-bottom: 2px solid  rgb(97,60,174, 0.25);
+  margin: 15px
+}
