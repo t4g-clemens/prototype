@@ -1,0 +1,50 @@
+.line {
+  display: flex;
+}
+
+.empathyBox {
+  padding-left: 20px;
+  height: 200px;
+  /* border-radius: 5px; */
+  /* border: 2px solid rgba(98, 98, 98, 0.374); */
+}
+
+.image {
+  margin-left: 5%;
+  /* margin-top: 10px; */
+  width: 40%;
+  height: 40%;
+}
+
+.title {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #23036A;
+}
+
+.empathyText {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  letter-spacing: 0.15px;
+
+  /* 00. On Surface / Medium Emphasis */
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.textareaLabel {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.4px;
+
+  /* 01. Primary/900 */
+  color: #23036A;
+}

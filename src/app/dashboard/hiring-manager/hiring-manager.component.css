@@ -1,6 +1,7 @@
 .mainContainer {
   display: grid;
   grid-template-columns: 55% auto;
+  height: 100%;
 }
 
 .stepperContainer {
@@ -12,20 +13,16 @@
   /* background-color: rgb(212, 212, 19); */
 }
 
-.mat-stepper {
+.stepper {
   height: 100%;
+  position: absolute;
+  bottom: 0px;
+  width: 55%;
 }
 
 .mat-form-field {
   width: 100%;
   padding-top: 15px;
-}
-
-.empathyBox {
-  padding: 30px;
-  /* height: 150px; */
-  border-radius: 5px;
-  border: 2px solid rgba(98, 98, 98, 0.374);
 }
 
 .hintBox {

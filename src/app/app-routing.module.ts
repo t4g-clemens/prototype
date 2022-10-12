@@ -8,6 +8,8 @@ import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-
 import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
+import { StepperComponent } from './stepper/stepper.component';
+import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -22,6 +24,16 @@ const routes: Routes = [
   {
     path: 'preview',
     component: PreviewPageComponent,
+    // ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'stepper',
+    component: StepperComponent,
+    // ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'department',
+    component: DepartmentViewComponent,
     // ...canActivate(redirectToLogin)
   },
   { path: 'home', component: NavigationComponent,
