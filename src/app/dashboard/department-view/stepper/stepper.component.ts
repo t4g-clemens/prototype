@@ -27,4 +27,8 @@ export class StepperComponent implements OnInit {
   getIndex(): number {
     return this.index
   }
+
+  onClick(number: number) {
+    this.index = number
+  }
 }
