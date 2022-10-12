@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-    <div class="hints" *ngIf="stepper.index === 3">
+    <div class="hints" *ngIf="stepper.index < 4 || stepper.index === 5 || stepper.index === 6">
       <div class="title">Input der Fachabteilung</div>
       <div class="empathyText">"{{ jd_data?.hiring_manager_data?.how_we_work }}"</div>
      </div>
