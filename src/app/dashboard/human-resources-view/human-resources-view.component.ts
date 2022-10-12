@@ -82,7 +82,6 @@ export class HumanResourcesViewComponent implements OnInit {
       stage: "in_edit_by_hr",
       hr_data: this.form.value
     })
-    this.router.navigate(['/home/dashboard'])
   }
 
   finish(): void {
