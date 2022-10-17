@@ -56,6 +56,10 @@ export class ListoverviewComponent implements OnInit {
     console.log(key)
   }
 
+  openPreview(key: string) {
+    window.open('/preview?key=' + key)
+  }
+
   onDeleteJobDescription(key: string): void {
     this.db.deleteItem(key)
   }
