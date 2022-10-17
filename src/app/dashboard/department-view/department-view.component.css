@@ -17,8 +17,9 @@
 }
 
 .hints {
-  /* margin-top: 40px; */
+  position: relative;
   width: 100%;
+  top: 100px;
   margin-bottom: 40px;
   background-color: white;
   border-radius: 15px 0px 0px 15px;
@@ -44,7 +45,7 @@
   font-size: 16px;
   line-height: 24px;
   /* or 150% */
-  letter-spacing: 0.15px;
+  letter-spacing: .15px;
 
   /* 00. On Surface / Medium Emphasis */
   color: rgba(0, 0, 0, 0.6);
@@ -133,4 +134,18 @@ textarea:focus {
 
   /* 01. Primary/900 */
   color: #23036A;
+}
+
+
+.arrow {
+  background-color: green;
+  width: 50px;
+  height: 150px;
+  position: relative;
+  top:150px
+}
+
+.leftContainer {
+  height: 100%;
+  display: flex;
 }

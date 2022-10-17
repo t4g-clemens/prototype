@@ -18,8 +18,8 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   getRandomImage() {
-    let i = Math.floor(Math.random() * 9) + 1;
-    return `assets/persons/${i}.svg`
+    let i = Math.floor(Math.random() * 8) + 1;
+    return `assets/persons_no_bubble/${i}.svg`
   }
 
   ngOnInit(): void {

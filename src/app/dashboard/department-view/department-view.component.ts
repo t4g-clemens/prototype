@@ -100,6 +100,7 @@ interface data {
   imageUrl: string,
   textareaLabel: string,
   formName: string,
+  hintTitle: string,
   hints?: string[]
 }
 
@@ -110,6 +111,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Deine Aufgaben",
     formName: "what_you_work_on",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       " An welche Themen, Projekte, werden die Bewerbenden arbeiten?",
       " Beschreibe die Aufgaben und Arbeitsinhalte mit Beispielen",
@@ -122,6 +124,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Das bringst du mit",
     formName: "what_you_bring",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Welche Abschlüsse sind gefordert?",
       "Beschreibe die Fähigkeiten passend zu den Aufgaben und Arbeitsinhalten",
@@ -136,6 +139,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Dein Team",
     formName: "team",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Ist das Team interdisziplinär?",
       "Gibts es ähnliche Positionen?",
@@ -153,6 +157,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Unser Arbeit",
     formName: "how_we_work",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Welche agilen Arbeitsmethoden werden eingesetzt?",
       "Check-ins / Retros / Scrum / ...",
@@ -171,6 +176,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Die Stelle im Referat",
     formName: "impact_in_work",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Welche Projekte verantwortet das Referat?",
       "Wie zahlt die Stelle in die Ziele des Referats ein?",
@@ -184,6 +190,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Jobtitel",
     formName: "title",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
       "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
@@ -202,6 +209,7 @@ let displayData = [
     imageUrl: "assets/person.jpg",
     textareaLabel: "Zusammenfassung",
     formName: "summary",
+    hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen.",
       "Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud.",
