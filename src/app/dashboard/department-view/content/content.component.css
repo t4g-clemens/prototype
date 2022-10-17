@@ -8,27 +8,47 @@
   display: flex;
 }
 
+.imageContainer {
+  display: flex;
+}
+
 .empathyBox {
-  padding-left: 20px;
-  /* height: 200px; */
-  /* border-radius: 5px; */
-  /* border: 2px solid rgba(98, 98, 98, 0.374); */
+  padding: 20px;
+  background-color: #E9505B;
+  /* min-width: 300px; */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.empathyArrow {
+  position: relative;
+  top: 60px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid #E9505B;
+  display: block;
 }
 
 .image {
-  margin-left: 5%;
-  /* margin-top: 10px; */
-  width: 45%;
-  height: 45%;
+  position: relative;
+  left: 10%;
+  bottom: -5%;
+  height: 230px;
 }
 
 .title {
-  margin-top: 40px;
-  font-weight: 700;
+  margin-top: 20px;
+  font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.15px;
-  color: #23036A;
+  color: white;
 }
 
 .empathyText {
@@ -40,7 +60,7 @@
   letter-spacing: 0.15px;
 
   /* 00. On Surface / Medium Emphasis */
-  color: rgba(0, 0, 0, 0.6);
+  color: white
 }
 
 .spacer {

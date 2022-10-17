@@ -17,8 +17,9 @@
 }
 
 .hints {
-  /* margin-top: 40px; */
+  position: relative;
   width: 100%;
+  top: 100px;
   margin-bottom: 40px;
   background-color: white;
   border-radius: 15px 0px 0px 15px;
@@ -44,7 +45,7 @@
   font-size: 16px;
   line-height: 24px;
   /* or 150% */
-  letter-spacing: 0.15px;
+  letter-spacing: .15px;
 
   /* 00. On Surface / Medium Emphasis */
   color: rgba(0, 0, 0, 0.6);
@@ -133,4 +134,19 @@ textarea:focus {
 
   /* 01. Primary/900 */
   color: #23036A;
+}
+
+.arrow {
+  position: relative;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 30px solid white;
+}
+
+.leftContainer {
+  height: 100%;
+  display: flex;
 }

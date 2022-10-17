@@ -143,3 +143,18 @@ textarea:focus {
   letter-spacing: 0.4px;
   color: #23036A;
 }
+
+.arrow {
+  position: relative;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 30px solid white;
+}
+
+.leftContainer {
+  height: 100%;
+  display: flex;
+}
