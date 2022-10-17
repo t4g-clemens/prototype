@@ -24,10 +24,10 @@
         <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6"></textarea>
       </form>
       <span class="buttonBar">
-        <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
+        <button mat-raised-button color="primary" (click)="save()">SICHERN</button>
         <span class="spacer"></span>
+        <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
         <button mat-raised-button color="primary" (click)="_next()" *ngIf="stepper.index !== 6">WEITER</button>
-        <button mat-raised-button color="primary" (click)="save()" *ngIf="stepper.index == 6">SICHERN</button>
         <button mat-raised-button color="primary" (click)="submitToHr()" *ngIf="stepper.index == 6">FERTIGSTELLEN</button>
       </span>
       <app-stepper #stepper class="stepper"></app-stepper>

@@ -33,9 +33,9 @@
 
 
     <span class="buttonBar">
-      <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
+      <button mat-raised-button color="primary" (click)="save()">SICHERN</button>
       <span class="spacer"></span>
-      <button mat-raised-button color="primary" (click)="save()" *ngIf="stepper.index !== 9">SICHERN</button>
+      <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
       <button mat-raised-button color="primary" (click)="next()" *ngIf="stepper.index !== 9">WEITER</button>
       <button mat-raised-button color="primary" (click)="preview()" *ngIf="stepper.index === 9">VORSCHAU</button>
       <button mat-raised-button color="primary" (click)="finish()" *ngIf="stepper.index === 9">FERTIGSTELLEN</button>

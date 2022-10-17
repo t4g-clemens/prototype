@@ -65,7 +65,6 @@ export class DepartmentViewComponent implements OnInit {
   }
 
   _next(): void {
-    console.log(this.displayData[this.getStepperIndex()].formName)
     this.stepper?.next();
   }
 
@@ -74,8 +73,6 @@ export class DepartmentViewComponent implements OnInit {
   }
 
   save(): void {
-    console.log('save')
-    console.log(this.form.value)
     this.db.getList().update(this.key, {
       stage: "in_edit_by_department",
       hiring_manager_data: this.form.value
@@ -85,7 +82,6 @@ export class DepartmentViewComponent implements OnInit {
 
   submitToHr(): void {
     // end editing and set status of JD to next field
-    console.log(this.form.value)
     this.db.getList().update(this.key, {
       stage: "completed_by_department",
       hiring_manager_data: this.form.value,
