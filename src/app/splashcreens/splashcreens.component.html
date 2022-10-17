@@ -1,0 +1,54 @@
+<div class="mainContainer">
+
+<div *ngIf="screen === 1">
+  <div class="splashTitle">Willkommen bei JOBFIX.<br>
+    Erfahre mehr über unsere Keyfeatures.</div>
+  <div class="splashOneImageContainer">
+    <img src="assets/splash_screen/group.svg" class="splashOneImage">
+  </div>
+  <div class="buttonBar">
+    <span class="emptyButton"></span>
+    <button mat-raised-button color="primary" (click)="next()" class="button">WEITER</button>
+  </div>
+</div>
+
+<div *ngIf="screen === 2">
+  <div class="splashTitle">JOBFIX hilft dir bei der Erstellung deiner Stellenausschreibung anhand von Erkentnissen von Bewerbenden.</div>
+  <div class="splashTwoImageContainer">
+    <img src="assets/splash_screen/man_with_lookingglass.svg" class="splashTwoImage">
+  </div>
+  <div class="buttonBar">
+    <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+    <button mat-raised-button color="primary" (click)="next()" class="button">WEITER</button>
+  </div>
+</div>
+
+<div *ngIf="screen === 3">
+  <div class="splashTitle">JOBFIX vereinfacht die Zusammenarbeit zwischen der Fachabteilung und dem Recruitment . Somit gehören unzählige E-Mails und Word Dokumente der Vergangenheit an.</div>
+  <div class="splashThreeImageContainerLeft">
+    <img src="assets/splash_screen/man_left.svg" class="splashThreeImage">
+  </div>
+  <div class="splashThreeImageContainerRight">
+    <img src="assets/splash_screen/woman_right.svg" class="splashThreeImage">
+  </div>
+  <div class="buttonBar">
+    <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+    <button mat-raised-button color="primary" (click)="next()" class="button">WEITER</button>
+  </div>
+</div>
+
+<div *ngIf="screen === 4">
+  <div class="splashTitle">JOBFIX wandelt deine Stellenausschreibung
+    in ein übersichtliches Design um.
+    Bewerbende können daher in Zukunft auf einen Blick die wichtigen Informationen erfassen.</div>
+  <div class="splashThreeImageContainerLeft">
+    <img src="assets/splash_screen/man_left.svg" class="splashThreeImage">
+  </div>
+  <div class="buttonBar">
+    <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+    <button mat-raised-button color="primary" (click)="login_as_department()" class="button">START ALS FACHABTEILUNG</button>
+    <button mat-raised-button color="primary" (click)="login_as_human_resources()" class="button">START ALS PERSONALABTEILUNG</button>
+  </div>
+</div>
+
+</div>

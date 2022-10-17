@@ -10,6 +10,7 @@ import { HumanResourcesViewComponent } from './dashboard/human-resources-view/hu
 import { PreviewPageComponent } from './preview-page/preview-page.component';
 import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';
 import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
+import { SplashcreensComponent } from './splashcreens/splashcreens.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -17,10 +18,11 @@ const redirectLoggedIn = () => redirectLoggedInTo(['home'])
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: "full"},
+  { path: '', redirectTo: 'splash', pathMatch: "full"},
   // { path: 'login', component: LoginscreenComponent, ...canActivate(redirectLoggedIn)},
   // { path: 'home', component: NavigationComponent, ...canActivate(redirectToLogin),
   { path: 'login', component: LoginscreenComponent},
+  { path: 'splash', component: SplashcreensComponent},
   {
     path: 'preview',
     component: PreviewPageComponent,

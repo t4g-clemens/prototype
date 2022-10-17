@@ -1,0 +1,78 @@
+.mainContainer {
+  height: 100%;
+  background-image: url("../../assets/background.png");
+  background-size: cover;
+}
+
+.splashTitle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color:  #23036A;
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  width: 60%;
+}
+
+.splashOneImageContainer {
+  width: 55%;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 0px;
+  left: 5%;
+}
+
+.splashOneImage {
+  margin-bottom: 0px;
+}
+
+
+.splashTwoImageContainer {
+  width: 40%;
+  /* height: 80%; */
+  position: absolute;
+  bottom: -50%;
+  margin-bottom: 0px;
+  left: -8%;
+}
+
+.splashTwoImage {
+  margin-bottom: 0px;
+}
+
+.splashThreeImageContainerLeft {
+  width: 45%;
+  position: absolute;
+  bottom: -10%;
+  margin-bottom: 0px;
+  left:-10%;
+}
+
+.splashThreeImageContainerRight {
+  width: 45%;
+  position: absolute;
+  bottom: -10%;
+  margin-bottom: 0px;
+  right: -5%;
+}
+
+.splashThreeImage {
+  margin-bottom: 0px;
+}
+
+.buttonBar{
+  position: absolute;
+  left: 45%;
+  bottom: 20%;
+  justify-items: start;
+}
+
+.button {
+  margin: 20px;
+}
+
+.emptyButton {
+  display: inline-block;
+  width: 125px;
+}
