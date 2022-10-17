@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JdDataService } from 'src/app/services/jd-data.service';
-import { JobDescription } from 'src/app/interfaces/jobdescription';
+import { HiringManagerData, JobDescription } from 'src/app/interfaces/jobdescription';
 import { StepperComponentHR } from './stepper/stepper.component';
 import { ContentComponent } from '../department-view/content/content.component';
 
@@ -32,8 +32,10 @@ export class HumanResourcesViewComponent implements OnInit {
     benefits: [''],
   })
   jd_data?: JobDescription
+  departmentData: string[] = [];
   key: string = ""
   displayData: data[] = [];
+  charachtersCount: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -48,10 +50,25 @@ export class HumanResourcesViewComponent implements OnInit {
       // and populate text fields
       this.form.patchValue(data.hr_data)
       this.jd_data = data;
+      this.extractDepartmentData();
     })
   }
 
   ngOnInit(): void {
+  }
+
+  extractDepartmentData() {
+    if (this.jd_data !== undefined ) {
+      this.departmentData = [
+        this.jd_data.hiring_manager_data.what_you_work_on,
+        this.jd_data.hiring_manager_data.what_you_bring,
+        this.jd_data.hiring_manager_data.team,
+        this.jd_data.hiring_manager_data.how_we_work,
+        this.jd_data.hiring_manager_data.impact_in_work,
+        this.jd_data.hiring_manager_data.title,
+        this.jd_data.hiring_manager_data.summary,
+      ]
+    }
   }
 
   getDisplaydata(key: number) {
@@ -68,7 +85,6 @@ export class HumanResourcesViewComponent implements OnInit {
   }
 
   next(): void {
-    console.log(this.displayData[this.getStepperIndex()].formName)
     this.stepper?.next();
   }
 
@@ -98,7 +114,11 @@ export class HumanResourcesViewComponent implements OnInit {
       hr_data: this.form.value
     })
     // this.router.navigate(['/preview'], {queryParams: {key: this.key}})
-    window.open('/preview/?key=' + this.key)
+    window.open('/preview?key=' + this.key)
+  }
+
+  onValueChange(ev: string): void {
+    this.charachtersCount = ev.length;
   }
 }
 
@@ -115,19 +135,19 @@ interface data {
 let displayData = [
   { // 0
     title: "Woran arbeite ich?",
-    text: "Reflektiere und beschreibe an dieser Stelle so präzise wie möglich, an welchen Aufgaben und Projekten gearbeitet wird. Dies ist entscheidend für Bewerbende, um nachvollziehen zu können, wie ihre Arbeit auf die Ziele der Behörde einzahlt.",
+    text: "An welchen Aufgaben und Projekten arbeite ich? Wie zahle ich mit meiner Arbeit auf die Ziele der Behörde ein?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Deine Aufgaben",
     formName: "what_you_work_on",
     hints: [
-      " An welche Themen, Projekte, werden die Bewerbenden arbeiten?",
+      " An welche Themen, Projekte, werden die Bewerber:innen arbeiten?",
       " Beschreibe die Aufgaben und Arbeitsinhalte mit Beispielen",
       " Beschreibe die Rolle",
       " Beschreibe kurz, wie ein typischer Tag oder eine Woche aussehen könnte?"]
   },
   { // 1
     title: "Was muss ich können?",
-    text: "Bewerbende möchten wissen, welche Qualifikationen sie mitbringen müssen und welche Fähigkeiten darüber hinaus für diese Stelle hilfreich wären. Reflektiere, was wirklich wichtig für diese Stelle ist, wie die Qualifikationen und Fähigkeiten auf das Tätigkeitsziel der Position einzahlen und beschreibe dies in wenigen Sätzen.",
+    text: "Welche Qualifikationen sind wichtig, damit ich in dieser Stelle erfolgreich bin? Wie zahlen diese Fähigkeiten auf meine Aufgaben ein?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Das bringst du mit",
     formName: "what_you_bring",
@@ -141,7 +161,7 @@ let displayData = [
   },
   { // 2
     title: "Mit wem arbeite ich?",
-    text: "Beschreibe für diesen Absatz, mit welchen Rollen und Persönlichkeiten die Bewerbenden zusammenarbeiten und in Kontakt kommen. Besonders die Teamstruktur und Vorgesetzte können ausschlaggebend für eine Bewerbung sein.",
+    text: "Mit welchen Rollen und Persönlichkeiten arbeite ich zusammen? Die Teamstruktur und meine Vorgesetzten sind mir sehr wichtig.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Dein Team",
     formName: "team",
@@ -158,7 +178,7 @@ let displayData = [
   },
   { // 3
     title: "Wie arbeite ich?",
-    text: "Die Art der Zusammenarbeit im Team ist für Bewerbende sehr wichtig. Zeige auf, wie ihr arbeitet und welche Management- und Projektmethoden bei euch eine wichtige Rolle spielen.",
+    text: "Wie ist die Zusammenarbeit im Team gestaltet? Welche Management- und Arbeitsmethoden kommen zur Anwendung?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Unser Arbeit",
     formName: "how_we_work",
@@ -176,44 +196,77 @@ let displayData = [
   },
   { // 4
     title: "Warum ist das wichtig?",
-    text: "Formuliere in wenigen Sätzen, wie die Bewerbenden in ihrer zukünftigen Position einen Mehrwert für ihr Referat bieten. Wie zahlen sie damit auf die einzelnen Ziele der Behörde ein?",
+    text: "Inwiefern kann ich in dieser Position einen Mehrwert für das Referat und die Gesellschaft leisten?",
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Dein Purpose bei Uns ",
-    formName: "purpose"
+    textareaLabel: "Die Stelle im Referat",
+    formName: "impact_in_work",
+    hints: [
+      "Welche Projekte verantwortet das Referat?",
+      "Wie zahlt die Stelle in die Ziele des Referats ein?",
+      "Wie zahlt die Stelle in die Ziele der Behörde ein?",
+      "Was soll in den ersten sechs Monaten erreicht werden?",
+    ]
   },
   { // 5
     title: "Wie stelle ich mich vor?",
-    text: "Bewerbenden möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist. An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen. Bitte nicht mit behördlichen Funktionsbezeichungen arbeiten",
+    text: "Bewerbende möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Jobtitel",
-    formName: "title"
+    formName: "title",
+    hints: [
+      "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
+      "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
+      "Beispiele:",
+      "Koordinatorin / Koordinator (w/m/d) im IT-Betrieb",
+      "Team Lead Software Entwicklung (w/m/d)",
+      "Data Scientist (w/m/d) im IT-Betrieb",
+      "Fullstack Developer (w/m/d)",
+      "Back End Developer (w/m/d)",
+      "Datenbank Administratorin / Administrator (w/m/d)",
+    ]
   },
   { // 6
     title: "Kurze Zusammenfassung?",
     text: "Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Zusammenfassung",
-    formName: "summary"
+    formName: "summary",
+    hints: [
+      "Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen.",
+      "Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud.",
+    ]
   },
   { // 7
     title: "Was bietet ihr?",
-    text: "Welche Benefits bietet ihr als Behörde? Welche Besonderheiten bietet ihr über die Rahmenbedingungen des öffentlichen Dienstes hinaus? Verschaffe den Bewerbenden mithilfe von konkreten Beispielen einen nachvollziehbaren Einblick.",
+    text: "Welche Benefits bietet ihr als Behörde? Welche Besonderheiten bietet ihr über die Rahmenbedingungen des öffentlichen Dienstes hinaus?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Benefits",
-    formName: "benefits"
+    formName: "benefits",
+    hints: [
+      "Verschaffe den Bewerber:innen mithilfe von konkreten Beispielen einen nachvollziehbaren Einblick.",
+    ]
   },
   { // 8
     title: "Wie geht es weiter?",
-    text: "Der Bewerbungsprozess im öffentlichen Dienst übersteigt die Dauer einer Bewerbung auf dem Arbeitsmarkt deutlich. Eine klare Kommunikation des Bewerbungsablaufs fördert Verständnis und Geduld beim Bewerbenden. Beschreibe, welchen Weg eine Bewerbung geht.",
+    text: "Wann erhalte ich Rückmeldung? Und wie lange dauert der Prozess? Ich habe noch andere Bewerbungen offen.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Zusammenfassung",
-    formName: "process"
+    formName: "process",
+    hints: [
+      "Wann erhält die Bewerber:in Rückmeldung?",
+      "Wann finden die Auswahlgespräche statt?",
+      "Wieviele Runden gibt es?",
+      "Mit wem finden die Gespräche statt?"
+    ]
   },
   { // 9
     title: "Und sonst?",
-    text: "Bewerbenden möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.",
+    text: "Bewerber:innen möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Rechtliches",
-    formName: "legal"
+    formName: "legal",
+    hints: [
+
+    ]
   },
 ]

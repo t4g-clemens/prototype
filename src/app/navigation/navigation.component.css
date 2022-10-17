@@ -1,5 +1,7 @@
 .sidenav-container {
   height: 100%;
+  background-image: url("../../assets/background.png");
+  background-size: cover;
 }
 
 .sidenav {
@@ -11,6 +13,9 @@
 }
 
 .mat-toolbar.mat-primary {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  /* backdrop-filter: blur(20px); */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -23,4 +28,14 @@
 
 .contentContainer {
   height: 100%;
+}
+
+.toolbar {
+  color: black;
+}
+
+.title {
+  position:absolute;
+  top: 9px;
+  left: 60px;
 }

@@ -1,6 +1,8 @@
 .mainContainer {
   /* height: calc(100% - 50px); */
   background-color: rgb(236, 220, 250);
+  background-image: url("../../../assets/background.png");
+  background-size: cover;
 }
 
 .sectionContainer {

@@ -12,13 +12,13 @@ import { JdDataService } from 'src/app/services/jd-data.service';
 export class HiringManagerComponent implements OnInit {
 
   form = this.formBuilder.group({
-    what_you_work_on: ['', Validators.required],
-    what_you_bring: ['', Validators.required],
-    team: ['', Validators.required],
-    how_we_work: ['', Validators.required],
-    title: ['', Validators.required],
-    summary: ['', Validators.required],
-    impact_in_work: ['', Validators.required],
+    what_you_work_on: [''],
+    what_you_bring: [''],
+    team: [''],
+    how_we_work: [''],
+    title: [''],
+    summary: [''],
+    impact_in_work: [''],
   })
 
   jd_data?: JobDescription

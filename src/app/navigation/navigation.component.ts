@@ -30,6 +30,10 @@ export class NavigationComponent {
     this.router.navigate(['home/dashboard'])
   }
 
+  goDashboard() {
+    this.router.navigate(['home/dashboard'])
+  }
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     public auth: AuthenticationService,

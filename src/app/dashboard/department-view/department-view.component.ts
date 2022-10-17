@@ -47,6 +47,10 @@ export class DepartmentViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getRandomImage() {
+
+  }
+
   getDisplaydata(key: number) {
     return this.displayData[key]
   }
@@ -102,7 +106,7 @@ interface data {
 let displayData = [
   { // 0
     title: "Woran arbeite ich?",
-    text: "Reflektiere und beschreibe an dieser Stelle so präzise wie möglich, an welchen Aufgaben und Projekten gearbeitet wird. Dies ist entscheidend für Bewerbende, um nachvollziehen zu können, wie ihre Arbeit auf die Ziele der Behörde einzahlt.",
+    text: "An welchen Aufgaben und Projekten arbeite ich? Wie zahle ich mit meiner Arbeit auf die Ziele der Behörde ein?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Deine Aufgaben",
     formName: "what_you_work_on",
@@ -114,7 +118,7 @@ let displayData = [
   },
   { // 1
     title: "Was muss ich können?",
-    text: "Bewerbende möchten wissen, welche Qualifikationen sie mitbringen müssen und welche Fähigkeiten darüber hinaus für diese Stelle hilfreich wären. Reflektiere, was wirklich wichtig für diese Stelle ist, wie die Qualifikationen und Fähigkeiten auf das Tätigkeitsziel der Position einzahlen und beschreibe dies in wenigen Sätzen.",
+    text: "Welche Qualifikationen sind wichtig, damit ich in dieser Stelle erfolgreich bin? Wie zahlen diese Fähigkeiten auf meine Aufgaben ein?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Das bringst du mit",
     formName: "what_you_bring",
@@ -128,7 +132,7 @@ let displayData = [
   },
   { // 2
     title: "Mit wem arbeite ich?",
-    text: "Beschreibe für diesen Absatz, mit welchen Rollen und Persönlichkeiten die Bewerbenden zusammenarbeiten und in Kontakt kommen. Besonders die Teamstruktur und Vorgesetzte können ausschlaggebend für eine Bewerbung sein.",
+    text: "Mit welchen Rollen und Persönlichkeiten arbeite ich zusammen? Die Teamstruktur und meine Vorgesetzten sind mir sehr wichtig.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Dein Team",
     formName: "team",
@@ -145,7 +149,7 @@ let displayData = [
   },
   { // 3
     title: "Wie arbeite ich?",
-    text: "Die Art der Zusammenarbeit im Team ist für Bewerbende sehr wichtig. Zeige auf, wie ihr arbeitet und welche Management- und Projektmethoden bei euch eine wichtige Rolle spielen.",
+    text: "Wie ist die Zusammenarbeit im Team gestaltet? Welche Management- und Arbeitsmethoden kommen zur Anwendung?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Unser Arbeit",
     formName: "how_we_work",
@@ -163,24 +167,44 @@ let displayData = [
   },
   { // 4
     title: "Warum ist das wichtig?",
-    text: "Formuliere in wenigen Sätzen, wie die Bewerbenden in ihrer zukünftigen Position einen Mehrwert für ihr Referat bieten.",
+    text: "Inwiefern kann ich in dieser Position einen Mehrwert für das Referat und die Gesellschaft leisten?",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Die Stelle im Referat",
     formName: "impact_in_work",
-    hints: []
+    hints: [
+      "Welche Projekte verantwortet das Referat?",
+      "Wie zahlt die Stelle in die Ziele des Referats ein?",
+      "Wie zahlt die Stelle in die Ziele der Behörde ein?",
+      "Was soll in den ersten sechs Monaten erreicht werden?",
+    ]
   },
   { // 5
     title: "Wie stelle ich mich vor?",
-    text: "Bewerbenden möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist. An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen. Bitte nicht mit behördlichen Funktionsbezeichungen arbeiten",
+    text: "Bewerbende möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Jobtitel",
-    formName: "title"
+    formName: "title",
+    hints: [
+      "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
+      "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
+      "Beispiele:",
+      "Koordinatorin / Koordinator (w/m/d) im IT-Betrieb",
+      "Team Lead Software Entwicklung (w/m/d)",
+      "Data Scientist (w/m/d) im IT-Betrieb",
+      "Fullstack Developer (w/m/d)",
+      "Back End Developer (w/m/d)",
+      "Datenbank Administratorin / Administrator (w/m/d)",
+    ]
   },
   { // 6
     title: "Kurze Zusammenfassung?",
     text: "Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Zusammenfassung",
-    formName: "summary"
+    formName: "summary",
+    hints: [
+      "Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen.",
+      "Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud.",
+    ]
   },
 ]

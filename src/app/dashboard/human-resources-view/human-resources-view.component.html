@@ -2,6 +2,8 @@
   <div class="stepperContainer">
     <div class="stepperContent">
 
+      <div class="spacer"></div>
+
       <app-content
         [title]="displayData[stepper.index].title"
         [text]="displayData[stepper.index].text"
@@ -23,6 +25,10 @@
         <textarea rows="6" formControlName="benefits" *ngIf="stepper.index == 7"></textarea>
         <textarea rows="6" formControlName="process" *ngIf="stepper.index == 8"></textarea>
         <textarea rows="6" formControlName="legal" *ngIf="stepper.index == 9"></textarea>
+        <!-- <div id="count">
+          <span id="current"> {{ charachtersCount }}</span>
+          <span id="maximum">/ 300</span>
+        </div> -->
       </form>
 
 
@@ -32,13 +38,13 @@
       <button mat-raised-button color="primary" (click)="save()" *ngIf="stepper.index !== 9">SICHERN</button>
       <button mat-raised-button color="primary" (click)="next()" *ngIf="stepper.index !== 9">WEITER</button>
       <button mat-raised-button color="primary" (click)="preview()" *ngIf="stepper.index === 9">VORSCHAU</button>
-      <button mat-raised-button color="primary" (click)="finish()" *ngIf="stepper.index == 9">FERTIGSTELLEN</button>
+      <button mat-raised-button color="primary" (click)="finish()" *ngIf="stepper.index === 9">FERTIGSTELLEN</button>
     </span>
     <app-stepper-HR #stepper class="stepper"></app-stepper-HR>
   </div>
   </div>
   <div class="helpContainer">
-    <div class="hints">
+    <div class="hints" *ngIf="stepper.index !== 9">
       <div class="title">Hilfestellungen</div>
       <div class="empathyText">
         <ul>
@@ -46,9 +52,9 @@
         </ul>
       </div>
     </div>
-    <div class="hints" *ngIf="stepper.index < 4 || stepper.index === 5 || stepper.index === 6">
+    <div class="hints" *ngIf="stepper.index < 7">
       <div class="title">Input der Fachabteilung</div>
-      <div class="empathyText">"{{ jd_data?.hiring_manager_data?.how_we_work }}"</div>
+      <div class="empathyText">"{{ departmentData[stepper.index] }}"</div>
      </div>
   </div>
 </div>
