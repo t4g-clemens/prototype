@@ -12,9 +12,12 @@
       </button>
         <span class="title">JOBFIX</span>
       </span>
+      <span>
+      <span class="userRoleDescription">{{ getUserRole() }}</span>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>person</mat-icon>
         </button>
+      </span>
         <mat-menu #menu="matMenu">
           <mat-radio-group [(ngModel)]="userRoleService.role" (change)="onRoleChange()">
             <button mat-menu-item>
@@ -28,20 +31,6 @@
           </mat-radio-button>
         </button>
           </mat-radio-group>
-          <!-- <mat-radio-group
-            [(ngModel)]="role" >
-            <button mat-menu-item >
-            <mat-radio-button [value]="role">
-              1111
-            </mat-radio-button>
-            <mat-radio-button [value]="role">
-              2222222
-            </mat-radio-button> -->
-            <!-- <mat-radio-button *ngFor="let selection of selections" [value]="selection">
-              {{ selection }}
-            </mat-radio-button>
-          </button>
-          </mat-radio-group> -->
           <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon> Logout
           </button>

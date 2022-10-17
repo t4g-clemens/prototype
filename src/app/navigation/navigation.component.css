@@ -39,3 +39,16 @@
   top: 9px;
   left: 60px;
 }
+
+.userRoleDescription {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  /* or 120% */
+  letter-spacing: 0.15px;
+  margin-right: 20px;
+  position: relative;
+  top: 2px;
+  /* 00. On Surface / High Emphasis */
+  color: rgba(0, 0, 0, 0.87);
+}

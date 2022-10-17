@@ -34,6 +34,15 @@ export class NavigationComponent {
     this.router.navigate(['home/dashboard'])
   }
 
+  getUserRole() {
+    if (this.userRoleService.getUserRole() === userRole.departments) {
+      return "Fachabteilung"
+    }
+    else {
+      return "Personalabteilung"
+    }
+  }
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     public auth: AuthenticationService,
