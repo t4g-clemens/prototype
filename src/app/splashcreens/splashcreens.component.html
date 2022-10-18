@@ -2,9 +2,10 @@
 
 <div *ngIf="screen === 1">
   <div class="splashTitle">Willkommen bei JOBFIX.<br>
-    Erfahre mehr über unsere Keyfeatures.</div>
+    Stellenanzeigen - <br>
+    Zugeschnitten auf Bewerber:innen.</div>
   <div class="splashOneImageContainer">
-    <img src="assets/splash_screen/group.svg" class="splashOneImage">
+    <img src="assets/splash_screen/1.svg" class="splashOneImage">
   </div>
   <div class="buttonBar">
     <span class="emptyButton"></span>
@@ -13,9 +14,9 @@
 </div>
 
 <div *ngIf="screen === 2">
-  <div class="splashTitle">JOBFIX hilft dir bei der Erstellung deiner Stellenausschreibung anhand von Erkentnissen von Bewerbenden.</div>
+  <div class="splashTitle">JOBFIX hilft dir, bei der Erstellung von Stellenausschreibung, auf die Bedürfnisse von Bewerbenden einzugehen.</div>
   <div class="splashTwoImageContainer">
-    <img src="assets/splash_screen/man_with_lookingglass.svg" class="splashTwoImage">
+    <img src="assets/splash_screen/2a.svg" class="splashTwoImage">
   </div>
   <div class="buttonBar">
     <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
@@ -24,12 +25,10 @@
 </div>
 
 <div *ngIf="screen === 3">
-  <div class="splashTitle">JOBFIX vereinfacht die Zusammenarbeit zwischen der Fachabteilung und dem Recruitment . Somit gehören unzählige E-Mails und Word Dokumente der Vergangenheit an.</div>
-  <div class="splashThreeImageContainerLeft">
-    <img src="assets/splash_screen/man_left.svg" class="splashThreeImage">
-  </div>
-  <div class="splashThreeImageContainerRight">
-    <img src="assets/splash_screen/woman_right.svg" class="splashThreeImage">
+  <div class="splashTitle">JOBFIX unterstützt dich dabei Fragen <br>
+    und Interessen von Bewerber:innen zu beantworten. Damit wieder mehr qualitative Bewerbungen bei dir ankommen.</div>
+  <div class="splashTwoImageContainer">
+    <img src="assets/splash_screen/2b.svg" class="splashTwoImage">
   </div>
   <div class="buttonBar">
     <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
@@ -38,11 +37,26 @@
 </div>
 
 <div *ngIf="screen === 4">
-  <div class="splashTitle">JOBFIX wandelt deine Stellenausschreibung
-    in ein übersichtliches Design um.
-    Bewerbende können daher in Zukunft auf einen Blick die wichtigen Informationen erfassen.</div>
+  <div class="splashTitle">
+    In JOBFIX arbeiten Fachabteilung und Recruitment gemeinsam. <br>
+    So gehören unzählige E-Mails und Word Dokumente der Vergangenheite an.</div>
   <div class="splashThreeImageContainerLeft">
-    <img src="assets/splash_screen/man_left.svg" class="splashThreeImage">
+    <img src="assets/splash_screen/3a.svg" class="splashThreeImage">
+  </div>
+  <div class="splashThreeImageContainerRight">
+    <img src="assets/splash_screen/3b.svg" class="splashThreeImage">
+  </div>
+  <div class="buttonBar">
+    <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+    <button mat-raised-button color="primary" (click)="next()" class="button">WEITER</button>
+  </div>
+</div>
+
+<div *ngIf="screen === 5">
+  <div class="splashTitle">JOBFIX wandelt deine Stellenausschreibung
+    in ein übersichtliches Design um. Alle wichtigen Informationen, auf einen Blick.</div>
+  <div class="splashFourImageContainer">
+    <img src="assets/splash_screen/4.svg" class="splashFourImage">
   </div>
   <div class="buttonBar">
     <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
