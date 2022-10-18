@@ -28,14 +28,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ListoverviewComponent } from './dashboard/listoverview/listoverview.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
-import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
-import { HintboxComponent } from './dashboard/hintbox/hintbox.component';
-import { HrHintsComponent } from './dashboard/hintbox/hr-hints/hr-hints.component';
-import { DepartmentHintsComponent } from './dashboard/hintbox/department-hints/department-hints.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
 import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';
 import { StepperComponentHR } from './dashboard/human-resources-view/stepper/stepper.component';
@@ -44,6 +41,7 @@ import { DepartmentViewComponent } from './dashboard/department-view/department-
 import { ContentComponent } from './dashboard/department-view/content/content.component';
 import { SplashcreensComponent } from './splashcreens/splashcreens.component';
 import { SentscreenComponent } from './dashboard/department-view/sentscreen/sentscreen.component';
+import { LinkDialogComponent } from './dashboard/new-job-description/link-dialog/link-dialog.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +50,7 @@ import { SentscreenComponent } from './dashboard/department-view/sentscreen/sent
     ListoverviewComponent,
     NavigationComponent,
     NewJobDescriptionComponent,
-    HiringManagerComponent,
     HumanResourcesViewComponent,
-    HintboxComponent,
-    HrHintsComponent,
-    DepartmentHintsComponent,
     PreviewPageComponent,
     StepperComponent,
     StepperComponentHR,
@@ -65,6 +59,7 @@ import { SentscreenComponent } from './dashboard/department-view/sentscreen/sent
     ContentComponent,
     SplashcreensComponent,
     SentscreenComponent,
+    LinkDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +69,7 @@ import { SentscreenComponent } from './dashboard/department-view/sentscreen/sent
     HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatDialogModule,
     MatInputModule,
     MatCardModule,
     MatToolbarModule,

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { JobDescription } from '../../interfaces/jobdescription';
 import { JdDataService } from '../../services/jd-data.service';
+import { LinkDialogComponent } from './link-dialog/link-dialog.component';
 
 @Component({
   selector: 'app-new-job-description',
@@ -28,7 +30,8 @@ export class NewJobDescriptionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private db: JdDataService
+    private db: JdDataService,
+    public dialog: MatDialog
     ) {
       this.key = history.state.key
       // load data from DB
@@ -64,9 +67,16 @@ export class NewJobDescriptionComponent implements OnInit {
         free_field: "...",
       }
     }
-    this.db.addItem(jd)
+    let res = this.db.addItem(jd)
+    if (res !== null) {
+      this.key = res;
+    }
     this.form.reset()
     this.router.navigate(['/home/dashboard'])
+
+    const dialogRef = this.dialog.open(LinkDialogComponent, {data: {key: this.key}});
+
+    dialogRef.afterClosed().subscribe();
   }
 
   onSave(): void {

@@ -7,8 +7,7 @@
 
         <app-content
           [title]="displayData[stepper.index].title"
-          [text]="displayData[stepper.index].text"
-          [imageUrl]="displayData[stepper.index].imageUrl">
+          [text]="displayData[stepper.index].text">
         </app-content>
 
         <div class="spacer"></div>
@@ -27,7 +26,7 @@
         <span class="buttonBar">
           <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
           <span class="spacer"></span>
-          <button mat-raised-button color="primary" (click)="_next()" *ngIf="stepper.index !== 6">WEITER</button>
+          <button mat-raised-button color="primary" (click)="next()" *ngIf="stepper.index !== 6">WEITER</button>
           <!-- <button mat-raised-button color="primary" (click)="save()" *ngIf="stepper.index == 6">SICHERN</button> -->
           <button mat-raised-button color="primary" (click)="submitToHr()" *ngIf="stepper.index == 6">FERTIGSTELLEN</button>
         </span>

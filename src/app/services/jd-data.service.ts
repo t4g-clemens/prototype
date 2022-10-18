@@ -28,7 +28,8 @@ export class JdDataService {
 
 
   addItem(item: JobDescription) {
-    this.items.push(item).then(() => {console.log('added', item)})
+    let newRef = this.items.push(item);
+    return newRef.key;
   }
 
   deleteItem(key: string) {

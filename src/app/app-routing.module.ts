@@ -5,7 +5,6 @@ import { canActivate, redirectLoggedInTo, redirectUnauthorizedTo } from '@angula
 import { ListoverviewComponent } from './dashboard/listoverview/listoverview.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NewJobDescriptionComponent } from './dashboard/new-job-description/new-job-description.component';
-import { HiringManagerComponent } from './dashboard/hiring-manager/hiring-manager.component';
 import { HumanResourcesViewComponent } from './dashboard/human-resources-view/human-resources-view.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
 import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';

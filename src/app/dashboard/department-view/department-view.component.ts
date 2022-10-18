@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StepperComponent } from 'src/app/dashboard/department-view/stepper/stepper.component';
 import { JobDescription } from 'src/app/interfaces/jobdescription';
 import { JdDataService } from 'src/app/services/jd-data.service';
+import { userRole, UserroleService } from 'src/app/services/userrole.service';
 import { ContentComponent } from './content/content.component';
 
 @Component({
@@ -31,11 +32,16 @@ export class DepartmentViewComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private db: JdDataService) {
+    private db: JdDataService,
+    private activatedRoute: ActivatedRoute,
+    private userRoleService: UserroleService) {
       this.displayData = displayData;
+      if (this.activatedRoute.snapshot.queryParams["key"] !== undefined) {
+        this.key = this.activatedRoute.snapshot.queryParams["key"];
+      }
+      this.userRoleService.role = userRole.departments;
       // load data from DB
       this.db.getItem(this.key).subscribe((data) => {
-        console.log("data", data);
         // and populate text fields
         this.form.setValue(data.hiring_manager_data)
         this.jd_data = data;
@@ -62,11 +68,13 @@ export class DepartmentViewComponent implements OnInit {
     }
   }
 
-  _next(): void {
+  next(): void {
+    this.save();
     this.stepper?.next();
   }
 
   back(): void {
+    this.save();
     this.stepper?.back();
   }
 
@@ -75,12 +83,10 @@ export class DepartmentViewComponent implements OnInit {
       stage: "in_edit_by_department",
       hiring_manager_data: this.form.value
     })
-    this.router.navigate(['/home/dashboard'])
   }
 
   submitToHr(): void {
     // end editing and set status of JD to next field
-    console.log('testse')
     this.db.getList().update(this.key, {
       stage: "completed_by_department",
       hiring_manager_data: this.form.value,
@@ -124,7 +130,7 @@ let displayData = [
       "Welche Abschlüsse sind gefordert?",
       "Beschreibe die Fähigkeiten passend zu den Aufgaben und Arbeitsinhalten",
       "Wie zahlen die Fähigkeiten auf die Ziele der Position ein?",
-      "Was für Tools sollte die Bewerber:in beherrschen?",
+      "Was für Tools sollten die Bewerbenden beherrschen?",
       "Welche Softskills sind wichtig für das Team?",
     ]
   },

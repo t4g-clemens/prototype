@@ -229,7 +229,7 @@ let displayData = [
     textareaLabel: "Zusammenfassung",
     formName: "process",
     hints: [
-      "Wann erhält die Bewerber:in Rückmeldung?",
+      "Wann erhalten die Bewerbenden Rückmeldung?",
       "Wann finden die Auswahlgespräche statt?",
       "Wieviele Runden gibt es?",
       "Mit wem finden die Gespräche statt?"
@@ -237,7 +237,7 @@ let displayData = [
   },
   { // 9
     title: "Und sonst?",
-    text: "Bewerber:innen möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.",
+    text: "Bewerbende möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Rechtliches",
     formName: "legal",

@@ -9,13 +9,15 @@ export class ContentComponent implements OnInit {
   @Input() activeStep: number = 0;
   @Input() title: string = "this is a test";
   @Input() text: string = "";
-  @Input() imageUrl: string = "";
   @Input() textareaLabel: string = "";
   @Input() formName: string = "";
 
   textfield: string = "..."
+  imageUrl: string = "assets/persons/1.svg"
 
-  constructor() { }
+  constructor() {
+    this.imageUrl = this.getRandomImage();
+  }
 
   getRandomImage() {
     let i = Math.floor(Math.random() * 9) + 1;

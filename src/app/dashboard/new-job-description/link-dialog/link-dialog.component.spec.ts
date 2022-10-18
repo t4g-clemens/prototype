@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HintboxComponent } from './hintbox.component';
+import { LinkDialogComponent } from './link-dialog.component';
 
-describe('HintboxComponent', () => {
-  let component: HintboxComponent;
-  let fixture: ComponentFixture<HintboxComponent>;
+describe('LinkDialogComponent', () => {
+  let component: LinkDialogComponent;
+  let fixture: ComponentFixture<LinkDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HintboxComponent ]
+      declarations: [ LinkDialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HintboxComponent);
+    fixture = TestBed.createComponent(LinkDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
