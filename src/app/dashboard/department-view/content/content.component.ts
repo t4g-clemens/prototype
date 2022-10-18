@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AvatarService } from 'src/app/services/avatar.service';
 
 @Component({
   selector: 'app-content',
@@ -15,13 +16,10 @@ export class ContentComponent implements OnInit {
   textfield: string = "..."
   imageUrl: string = "assets/persons/1.svg"
 
-  constructor() {
-    this.imageUrl = this.getRandomImage();
-  }
-
-  getRandomImage() {
-    let i = Math.floor(Math.random() * 9) + 1;
-    return `assets/persons/${i}.svg`
+  constructor(
+    private avatarService: AvatarService
+  ) {
+    this.imageUrl = avatarService.getImage();
   }
 
   ngOnInit(): void {
