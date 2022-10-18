@@ -135,82 +135,57 @@ interface data {
 
 let displayData = [
   { // 0
-    title: "Woran arbeite ich?",
-    text: "An welchen Aufgaben und Projekten arbeite ich? Wie zahle ich mit meiner Arbeit auf die Ziele der Behörde ein?",
+    title: "Woran werde ich arbeiten?",
+    text: `"Dies ist für mich wichtig, um nachvollziehen zu können, wie meine Arbeit auf die Ziele der Behörde einzahlt."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Deine Aufgaben",
     formName: "what_you_work_on",
     hints: [
-      " An welche Themen, Projekte, werden die Bewerber:innen arbeiten?",
-      " Beschreibe die Aufgaben und Arbeitsinhalte mit Beispielen",
-      " Beschreibe die Rolle",
-      " Beschreibe kurz, wie ein typischer Tag oder eine Woche aussehen könnte?"]
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."]
   },
   { // 1
-    title: "Was muss ich können?",
-    text: "Welche Qualifikationen sind wichtig, damit ich in dieser Stelle erfolgreich bin? Wie zahlen diese Fähigkeiten auf meine Aufgaben ein?",
+    title: "Was muss ich mitbringen?",
+    text: `"Welche Qualifikationen und Fähigkeiten muss ich mitbringen, damit ich in dieser Stelle erfolgreich bin? Und wie zahlen diese auf meine Aufgaben ein?"`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Das bringst du mit",
     formName: "what_you_bring",
     hints: [
-      "Welche Abschlüsse sind gefordert?",
-      "Beschreibe die Fähigkeiten passend zu den Aufgaben und Arbeitsinhalten",
-      "Wie zahlen die Fähigkeiten auf die Ziele der Position ein?",
-      "Was für Tools sollte die Bewerber:in beherrschen?",
-      "Welche Softskills sind wichtig für das Team?",
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 2
-    title: "Mit wem arbeite ich?",
+    title: "Mit wem werde ich arbeiten?",
     text: "Mit welchen Rollen und Persönlichkeiten arbeite ich zusammen? Die Teamstruktur und meine Vorgesetzten sind mir sehr wichtig.",
     imageUrl: "assets/person.jpg",
     textareaLabel: "Dein Team",
     formName: "team",
     hints: [
-      "Ist das Team interdisziplinär?",
-      "Gibts es ähnliche Positionen?",
-      "Wer ist noch im Team?",
-      "Wie groß ist das Team?",
-      "Wie ist die Altersstruktur?",
-      "Wie ist die Geschlechterverteilung?",
-      "Ist die Stelle eine neu geschaffen?",
-      "Wächst das Team?",
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 3
-    title: "Wie arbeite ich?",
-    text: "Wie ist die Zusammenarbeit im Team gestaltet? Welche Management- und Arbeitsmethoden kommen zur Anwendung?",
+    title: "Wie werde ich arbeiten?",
+    text: `"Für mich ist die Art der Zusammenarbeit im Team wichtig. Besonderes ausschlaggebend sind für mich die Tools und die Arbeitsmethoden."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Unser Arbeit",
     formName: "how_we_work",
     hints: [
-      "Welche agilen Arbeitsmethoden werden eingesetzt?",
-      "Check-ins / Retros / Scrum / ...",
-      "Beschreibe Eure Teamkultur und welche Werte euch wichtig sind?",
-      "Fehlerkultur / Auf Augenhöhe Entscheidungen treffen / Kaffeerunden zum Start in den Morgen / ...",
-      "Wie arbeitet ihr an den Aufgaben?",
-      "In zeitlich begrenzten Projekten / Tickets / Multidisziplinären Teams / ...",
-      "Wie frei und eigenverantwortlich wird der Bewerbende arbeiten können?",
-      "Beschreibe welche Formen des Arbeitsortes möglich sind (Office / Remote) und wie oft",
-      "Beschreibe diese, nur wenn sie wirklich gelebt werden",
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 4
-    title: "Warum ist das wichtig?",
-    text: "Inwiefern kann ich in dieser Position einen Mehrwert für das Referat und die Gesellschaft leisten?",
+    title: "Worauf zahlt meine Arbeit ein?",
+    text: `"Ich möchte wissen welchen Mehrwert ich mit meiner Arbeit für das Referat und die Gesellschaft leisten kann."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Die Stelle im Referat",
     formName: "impact_in_work",
     hints: [
-      "Welche Projekte verantwortet das Referat?",
-      "Wie zahlt die Stelle in die Ziele des Referats ein?",
-      "Wie zahlt die Stelle in die Ziele der Behörde ein?",
-      "Was soll in den ersten sechs Monaten erreicht werden?",
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 5
-    title: "Wie stelle ich mich vor?",
-    text: "Bewerbende möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.",
+    title: "Solche Jobtitel versteht sie.",
+    text: `"Ich möchte aus einem kurzen und prägnanten Titel, der sich an Jobtitel aus der Freien Wirtschaft orientiert, meine Stelle einfach finden können."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Jobtitel",
     formName: "title",
@@ -218,33 +193,33 @@ let displayData = [
       "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
       "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
       "Beispiele:",
-      "Koordinatorin / Koordinator (w/m/d) im IT-Betrieb",
-      "Team Lead Software Entwicklung (w/m/d)",
-      "Data Scientist (w/m/d) im IT-Betrieb",
-      "Fullstack Developer (w/m/d)",
-      "Back End Developer (w/m/d)",
-      "Datenbank Administratorin / Administrator (w/m/d)",
+      `"Koordinatorin / Koordinator (w/m/d) im IT-Betrieb"`,
+      `"Team Lead Software Entwicklung (w/m/d)"`,
+      `"Data Scientist (w/m/d) im IT-Betrieb"`,
+      `"Fullstack Developer (w/m/d)"`,
+      `"Back End Developer (w/m/d)"`,
+      `"Datenbank Administratorin / Administrator (w/m/d)"`,
     ]
   },
   { // 6
     title: "Kurze Zusammenfassung?",
-    text: "Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.",
+    text: `"Ich möchte in einem Satz verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Zusammenfassung",
     formName: "summary",
     hints: [
-      "Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen.",
-      "Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud.",
+      `"Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen."`,
+      `"Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud."`,
     ]
   },
   { // 7
     title: "Was bietet ihr?",
-    text: "Welche Benefits bietet ihr als Behörde? Welche Besonderheiten bietet ihr über die Rahmenbedingungen des öffentlichen Dienstes hinaus?",
+    text: `"Ich möchte erkennen welche Benefits und Besonderheiten ihr mir über die Rahmenbedingungen des öffentlichen Dienstes bietet."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Benefits",
     formName: "benefits",
     hints: [
-      "Verschaffe den Bewerber:innen mithilfe von konkreten Beispielen einen nachvollziehbaren Einblick.",
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen.",
     ]
   },
   { // 8
@@ -267,7 +242,7 @@ let displayData = [
     textareaLabel: "Rechtliches",
     formName: "legal",
     hints: [
-
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
 ]

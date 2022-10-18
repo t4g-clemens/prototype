@@ -191,12 +191,12 @@ let displayData = [
       "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
       "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
       "Beispiele:",
-      "Koordinatorin / Koordinator (w/m/d) im IT-Betrieb",
-      "Team Lead Software Entwicklung (w/m/d)",
-      "Data Scientist (w/m/d) im IT-Betrieb",
-      "Fullstack Developer (w/m/d)",
-      "Back End Developer (w/m/d)",
-      "Datenbank Administratorin / Administrator (w/m/d)",
+      `"Koordinatorin / Koordinator (w/m/d) im IT-Betrieb"`,
+      `"Team Lead Software Entwicklung (w/m/d)"`,
+      `"Data Scientist (w/m/d) im IT-Betrieb"`,
+      `"Fullstack Developer (w/m/d)"`,
+      `"Back End Developer (w/m/d)"`,
+      `"Datenbank Administratorin / Administrator (w/m/d)"`,
     ]
   },
   { // 6
@@ -207,8 +207,8 @@ let displayData = [
     formName: "summary",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
-      "Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen.",
-      "Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud.",
+      `"Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen."`,
+      `"Sie bilden die zentrale Eingangsschnittstelle für interne und externe Anfragen zur Bundescloud."`,
     ]
   },
 ]
