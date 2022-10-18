@@ -27,11 +27,16 @@ export class NavigationComponent {
     }
 
   onRoleChange() {
-    this.router.navigate(['home/dashboard'])
+    if (this.userRoleService.getUserRole() === userRole.departments) {
+      this.router.navigate(['home/department'])
+    }
+    else {
+      this.router.navigate(['home/dashboard'])
+    }
   }
 
   goDashboard() {
-    this.router.navigate(['home/dashboard'])
+    this.onRoleChange()
   }
 
   getUserRole() {

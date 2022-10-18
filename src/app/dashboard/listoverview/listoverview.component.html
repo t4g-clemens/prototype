@@ -83,43 +83,5 @@
 
 <div class="heightSpacer"></div>
 </div>
-
-
-<div *ngIf="userRoleService.getUserRole() === 'department'">
-
-  <div class="dashboardTitle">Dashboard</div>
-
-
-<div class="sectionContainer">
-  <div class="title">Neue Stellenausschreibungen</div>
-  <mat-nav-list role="list">
-    <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'send_to_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
-    </div>
-  </mat-nav-list>
-</div>
-
-<div class="sectionContainer">
-  <div class="title">In Bearbeitung</div>
-  <mat-nav-list role="list">
-    <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'in_edit_by_department'" role="listitem" (click)="openToEditByDepartment(item.key)">{{ item.id }}</mat-list-item>
-    </div>
-  </mat-nav-list>
-</div>
-
-<div class="sectionContainer">
-  <div class="title">Fertiggestellt</div>
-  <mat-nav-list role="list">
-    <div  *ngFor="let item of jds">
-    <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" (click)="openPreview(item.key)">{{ item.id }}</mat-list-item>
-    </div>
-  </mat-nav-list>
-</div>
-
-  <div class="heightSpacer"></div>
-
-</div>
-
 </div>
 </div>

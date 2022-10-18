@@ -43,6 +43,7 @@ import { StepperDotComponent } from './dashboard/department-view/stepper/stepper
 import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
 import { ContentComponent } from './dashboard/department-view/content/content.component';
 import { SplashcreensComponent } from './splashcreens/splashcreens.component';
+import { SentscreenComponent } from './dashboard/department-view/sentscreen/sentscreen.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SplashcreensComponent } from './splashcreens/splashcreens.component';
     DepartmentViewComponent,
     ContentComponent,
     SplashcreensComponent,
+    SentscreenComponent,
   ],
   imports: [
     BrowserModule,

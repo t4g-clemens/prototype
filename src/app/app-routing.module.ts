@@ -11,6 +11,7 @@ import { PreviewPageComponent } from './preview-page/preview-page.component';
 import { StepperComponent } from './dashboard/department-view/stepper/stepper.component';
 import { DepartmentViewComponent } from './dashboard/department-view/department-view.component';
 import { SplashcreensComponent } from './splashcreens/splashcreens.component';
+import { SentscreenComponent } from './dashboard/department-view/sentscreen/sentscreen.component';
 
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: 'stepper',
     component: StepperComponent,
+    // ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'finished',
+    component: SentscreenComponent,
     // ...canActivate(redirectToLogin)
   },
   { path: 'home', component: NavigationComponent,

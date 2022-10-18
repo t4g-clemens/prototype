@@ -1,0 +1,16 @@
+.mainContainer {
+  height: 100%;
+  background-image: url("../../../../assets/background.png");
+  background-size: cover;
+}
+
+.splashTitle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color:  #23036A;
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  width: 65%;
+}

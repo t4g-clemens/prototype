@@ -31,7 +31,7 @@ export class SplashcreensComponent implements OnInit {
 
   login_as_department() {
     this.userRoleService.role = userRole.departments;
-    this.router.navigate(['home/dashboard'])
+    this.router.navigate(['home/department'])
   }
 
   login_as_human_resources() {

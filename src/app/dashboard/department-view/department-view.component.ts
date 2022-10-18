@@ -24,7 +24,7 @@ export class DepartmentViewComponent implements OnInit {
     summary: [''],
     impact_in_work: [''],
   })
-  key: string = "";
+  key: string = "-NELgsmO9G9qcq06nQqV";
   jd_data?: JobDescription;
   displayData: data[] = [];
 
@@ -32,10 +32,8 @@ export class DepartmentViewComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private db: JdDataService) {
-      this.displayData  = displayData;
-      this.key = history.state.key
+      this.displayData = displayData;
       // load data from DB
-      console.log(this.key)
       this.db.getItem(this.key).subscribe((data) => {
         console.log("data", data);
         // and populate text fields
@@ -82,11 +80,12 @@ export class DepartmentViewComponent implements OnInit {
 
   submitToHr(): void {
     // end editing and set status of JD to next field
+    console.log('testse')
     this.db.getList().update(this.key, {
       stage: "completed_by_department",
       hiring_manager_data: this.form.value,
     })
-    this.router.navigate(['/home/dashboard'])
+    this.router.navigate(['/finished'])
   }
 }
 
