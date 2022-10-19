@@ -6,33 +6,19 @@
 
 <div class="dashboardTitle">Deine Stellenanzeigen</div>
 
-<div class="sectionContainer">
-
-  <div align="end">
-      <button mat-fab color="primary" (click)="onAddJobDescription()"><mat-icon>add</mat-icon>
-      </button>
-    </div>
-
-    <div class="title">Neue Stellenausschreibungen</div>
-    <mat-nav-list role="list">
-      <div  *ngFor="let item of jds">
-      <mat-list-item *ngIf="item.stage === 'new'" role="listitem" >
-        <a matLine (click)="openToEditNewJD(item.key)">{{ item.id }}</a>
-        <button mat-icon-button>
-          <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
-      </button>
-      </mat-list-item>
-      </div>
-    </mat-nav-list>
+<div class="sectionContainer sectionNew">
+  <div class="title">Neue Stellenausschreibungen</div>
+  <button mat-raised-button color="primary" (click)="onAddJobDescription()"><mat-icon>add</mat-icon> Hinzufügen
+  </button>
 
 </div>
 
 
-<div class="sectionContainer">
-<div class="title">In Bearbeitung durch Fachabteilung</div>
+<div class="sectionContainer sectionOne">
+<div class="title">Stellenausschreibungen in Bearbeitung durch Fachabteilungen</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" >
+  <mat-list-item *ngIf="item.stage === 'new' || item.stage === 'send_to_department' || item.stage === 'in_edit_by_department'" role="listitem" >
     <a matLine (click)="openToEditNewJD(item.key)">{{ item.id }}</a>
     <button mat-icon-button>
       <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
@@ -42,11 +28,11 @@
 </mat-nav-list>
 </div>
 
-<div class="sectionContainer">
-<div class="title">Fertiggestellt durch Fachabteilung</div>
+<div class="sectionContainer sectionTwo">
+<div class="title">Fertigzustellende Stellenausschreibungen mit Input der Fachabteilungen</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'completed_by_department'" role="listitem" >
+  <mat-list-item *ngIf="item.stage === 'completed_by_department' || item.stage === 'in_edit_by_hr'" role="listitem" >
     <a matLine (click)="openToEditByHr(item.key)">{{ item.id }}</a>
     <button mat-icon-button>
       <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
@@ -56,22 +42,8 @@
 </mat-nav-list>
 </div>
 
-<div class="sectionContainer">
-<div class="title">In Bearbeitung durch Personalabteilung</div>
-<mat-nav-list role="list">
-  <div  *ngFor="let item of jds">
-  <mat-list-item *ngIf="item.stage === 'in_edit_by_hr'" role="listitem" >
-    <a matLine (click)="openToEditByHr(item.key)">{{ item.id }}</a>
-    <button mat-icon-button>
-      <mat-icon (click)="onDeleteJobDescription(item.key)">delete</mat-icon>
-   </button>
-  </mat-list-item>
-  </div>
-</mat-nav-list>
-</div>
-
-<div class="sectionContainer">
-<div class="title">Fertiggestellt</div>
+<div class="sectionContainer sectionThree">
+<div class="title">Aktuell veröffentlichte Stellenausschreibungen</div>
 <mat-nav-list role="list">
   <div  *ngFor="let item of jds">
   <mat-list-item *ngIf="item.stage === 'finished'" role="listitem" >

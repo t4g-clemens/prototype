@@ -7,7 +7,7 @@
 
 .sectionContainer {
   padding: 25px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 40px;
@@ -38,7 +38,8 @@
   /* padding: 20px; */
   justify-content: space-between;
   border-radius: 5px;
-  border: 2px solid rgb(98, 98, 98, 0.174);
+  background-color:  #ECDDFF;
+  /* border: 2px solid rgb(98, 98, 98, 0.174); */
 }
 
 .tmp {
@@ -86,4 +87,28 @@
   margin-left: 50px;
   margin-top: 80px;
   margin-bottom: 50px;
+}
+
+.mat-raised-button {
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
+/*
+.mat-icon {
+  color: white;
+} */
+
+.sectionNew {
+  background-color: rgba(67, 94, 192, 0.1);
+}
+
+.sectionOne {
+  background-color: rgba(67, 94, 192, 0.3);;
+}
+.sectionTwo {
+  background-color: rgba(67, 94, 192, 0.5);;
+}
+.sectionThree {
+  background-color: rgba(67, 94, 192, 0.7);;
 }
