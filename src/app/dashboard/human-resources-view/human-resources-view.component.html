@@ -15,16 +15,16 @@
 
       <div class="textareaLabel">{{ displayData[stepper.index].textareaLabel }}</div>
       <form [formGroup]="form">
-        <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0"></textarea>
-        <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1"></textarea>
-        <textarea rows="6" formControlName="team" *ngIf="stepper.index == 2"></textarea>
-        <textarea rows="6" formControlName="how_we_work" *ngIf="stepper.index == 3"></textarea>
-        <textarea rows="6" formControlName="purpose" *ngIf="stepper.index == 4"></textarea>
-        <textarea rows="6" formControlName="title" *ngIf="stepper.index == 5"></textarea>
-        <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6"></textarea>
-        <textarea rows="6" formControlName="benefits" *ngIf="stepper.index == 7"></textarea>
-        <textarea rows="6" formControlName="process" *ngIf="stepper.index == 8"></textarea>
-        <textarea rows="6" formControlName="legal" *ngIf="stepper.index == 9"></textarea>
+        <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="team" *ngIf="stepper.index == 2" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="how_we_work" *ngIf="stepper.index == 3" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="purpose" *ngIf="stepper.index == 4" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="title" *ngIf="stepper.index == 5" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="benefits" *ngIf="stepper.index == 7" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="process" *ngIf="stepper.index == 8" placeholder="Schreib einfach los... "></textarea>
+        <textarea rows="6" formControlName="legal" *ngIf="stepper.index == 9" placeholder="Schreib einfach los... "></textarea>
         <!-- <div id="count">
           <span id="current"> {{ charachtersCount }}</span>
           <span id="maximum">/ 300</span>
@@ -47,7 +47,7 @@
 </div>
   <div class="helpContainer">
     <div class="hints" *ngIf="stepper.index !== 9">
-      <div class="title">Solche Formulierungen begeistern sie:</div>
+      <div class="title">Solche Formulierungen begeistern die Bewerbenden:</div>
       <div class="empathyText">
         <ul>
           <li *ngFor="let hint of displayData[stepper.index].hints">{{ hint }}</li>

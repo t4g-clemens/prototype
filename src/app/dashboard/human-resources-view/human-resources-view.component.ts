@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JdDataService } from 'src/app/services/jd-data.service';
-import { HiringManagerData, JobDescription } from 'src/app/interfaces/jobdescription';
+import { JobDescription } from 'src/app/interfaces/jobdescription';
 import { StepperComponentHR } from './stepper/stepper.component';
 import { ContentComponent } from '../department-view/content/content.component';
 
@@ -138,16 +138,16 @@ let displayData = [
     title: "Woran werde ich arbeiten?",
     text: `"Dies ist für mich wichtig, um nachvollziehen zu können, wie meine Arbeit auf die Ziele der Behörde einzahlt."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Deine Aufgaben",
+    textareaLabel: `"Deine Aufgaben" in der Stellenausschreibung`,
     formName: "what_you_work_on",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."]
   },
   { // 1
     title: "Was muss ich mitbringen?",
-    text: `"Welche Qualifikationen und Fähigkeiten muss ich mitbringen, damit ich in dieser Stelle erfolgreich bin? Und wie zahlen diese auf meine Aufgaben ein?"`,
+    text: `"Ich möchten wissen, welche Qualifikationen und Fähigkeiten ich mitbringen muss und wie diese auf das Tätigkeitsziel der Position einzahlen."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Das bringst du mit",
+    textareaLabel: `"Dein Profil" in der Stellenausschreibung`,
     formName: "what_you_bring",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
@@ -155,9 +155,9 @@ let displayData = [
   },
   { // 2
     title: "Mit wem werde ich arbeiten?",
-    text: "Mit welchen Rollen und Persönlichkeiten arbeite ich zusammen? Die Teamstruktur und meine Vorgesetzten sind mir sehr wichtig.",
+    text: `"Mir ist es wichtig zu wissen mit welchen Rollen und Persönlichkeiten ich zusammenarbeiten und in Kontakt kommen werde. Besonders die Teamstruktur und meine Vorgesetzten sind ausschlaggebend."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Dein Team",
+    textareaLabel: `"Dein Team" in der Stellenausschreibung`,
     formName: "team",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
@@ -167,7 +167,7 @@ let displayData = [
     title: "Wie werde ich arbeiten?",
     text: `"Für mich ist die Art der Zusammenarbeit im Team wichtig. Besonderes ausschlaggebend sind für mich die Tools und die Arbeitsmethoden."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Unser Arbeit",
+    textareaLabel: `"Unser Arbeit" in der Stellenausschreibung`,
     formName: "how_we_work",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
@@ -177,35 +177,27 @@ let displayData = [
     title: "Worauf zahlt meine Arbeit ein?",
     text: `"Ich möchte wissen welchen Mehrwert ich mit meiner Arbeit für das Referat und die Gesellschaft leisten kann."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Die Stelle im Referat",
+    textareaLabel: `"Dein Purpose bei Uns" in der Stellenausschreibung`,
     formName: "impact_in_work",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 5
-    title: "Solche Jobtitel versteht sie.",
-    text: `"Ich möchte aus einem kurzen und prägnanten Titel, der sich an Jobtitel aus der Freien Wirtschaft orientiert, meine Stelle einfach finden können."`,
+    title: "Solche Jobtitel verstehen sie.",
+    text: `"Ich möchte aus einem kurzen und prägnanten Titel, der sich an Jobtiteln aus der Freien Wirtschaft orientiert, meine Stelle einfach finden können."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Jobtitel",
+    textareaLabel: `"Jobtitel" in der Stellenausschreibung`,
     formName: "title",
     hints: [
-      "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
-      "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
-      "Beispiele:",
-      `"Koordinatorin / Koordinator (w/m/d) im IT-Betrieb"`,
-      `"Team Lead Software Entwicklung (w/m/d)"`,
-      `"Data Scientist (w/m/d) im IT-Betrieb"`,
-      `"Fullstack Developer (w/m/d)"`,
-      `"Back End Developer (w/m/d)"`,
-      `"Datenbank Administratorin / Administrator (w/m/d)"`,
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
     ]
   },
   { // 6
-    title: "Kurze Zusammenfassung?",
+    title: "Jobuntertitel",
     text: `"Ich möchte in einem Satz verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Zusammenfassung",
+    textareaLabel: `"Jobuntertitel" in der Stellenausschreibung`,
     formName: "summary",
     hints: [
       `"Im Nationalen IT-Lagezentrum unterstützen Sie den 24/7 Dauerdienst und entwickeln Strukturen und Prozesse, um die Einsatzbereitschaft jederzeit sicherzustellen."`,
@@ -213,33 +205,30 @@ let displayData = [
     ]
   },
   { // 7
-    title: "Was bietet ihr?",
+    title: "Was bietet ihr mir?",
     text: `"Ich möchte erkennen welche Benefits und Besonderheiten ihr mir über die Rahmenbedingungen des öffentlichen Dienstes bietet."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Benefits",
+    textareaLabel: `"Benefits" in der Stellenausschreibung`,
     formName: "benefits",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen.",
     ]
   },
   { // 8
-    title: "Wie geht es weiter?",
-    text: "Wann erhalte ich Rückmeldung? Und wie lange dauert der Prozess? Ich habe noch andere Bewerbungen offen.",
+    title: "Wie sieht der Bewerbungsprozess aus?",
+    text: `"Ich möchte wissen, wie der Bewerbungsprozess im öffentlichen Dienst aussieht. Zudem hilft mir eine klare Kommunikation im  Bewerbungsablaufs, um  Verständnis und Geduld zu haben."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Zusammenfassung",
+    textareaLabel: `"Unser Prozess" in der Stellenausschreibung`,
     formName: "process",
     hints: [
-      "Wann erhalten die Bewerbenden Rückmeldung?",
-      "Wann finden die Auswahlgespräche statt?",
-      "Wieviele Runden gibt es?",
-      "Mit wem finden die Gespräche statt?"
+      "Hier folgen Beispiele aus erfolgreichen Ausschreibungen.",
     ]
   },
   { // 9
-    title: "Und sonst?",
-    text: "Bewerbende möchten übersichtlich die wichtigsten Informationen sehen. Daher füge die rechtlichen Informationen, wie zum Beispiel das Gleichstellungsgesetz als Link ein und halte dich kurz.",
+    title: "Was steht im Disclaimer?",
+    text: `"Die Rahmenbedingungen der Stelle sind auch interessant für mich"`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Rechtliches",
+    textareaLabel: `"Disclaimer" in der Stellenausschreibung`,
     formName: "legal",
     hints: [
       "Hier folgen Beispiele aus erfolgreichen Ausschreibungen."
