@@ -10,7 +10,7 @@ export class AvatarService {
   }
 
   createRandomImage() {
-    let i = Math.floor(Math.random() * 9) + 1;
+    let i = Math.floor(Math.random() * 4) + 1;
     return `assets/persons/${i}.svg`
   }
 
