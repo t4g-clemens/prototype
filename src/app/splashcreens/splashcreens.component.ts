@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { userRole, UserroleService } from '../services/userrole.service';
 
 @Component({
@@ -10,13 +10,19 @@ import { userRole, UserroleService } from '../services/userrole.service';
 export class SplashcreensComponent implements OnInit {
 
   screen = 1;
+  key?: string;
   _human_resources = userRole.human_resources;
   _department = userRole.departments;
 
   constructor(
     private router: Router,
-    public userRoleService: UserroleService
-  ) { }
+    public userRoleService: UserroleService,
+    public activatedRoute: ActivatedRoute,
+  ) {
+    if (this.activatedRoute.snapshot.queryParams["key"] !== undefined) {
+      this.key = this.activatedRoute.snapshot.queryParams["key"]
+    }
+  }
 
   ngOnInit(): void {
   }
@@ -31,7 +37,7 @@ export class SplashcreensComponent implements OnInit {
 
   login_as_department() {
     this.userRoleService.role = userRole.departments;
-    this.router.navigate(['home/department'])
+    this.router.navigate([`home/department`], {queryParams: {key: this.key}})
   }
 
   login_as_human_resources() {

@@ -26,7 +26,7 @@
 
 <div *ngIf="screen === 3">
   <div class="splashTitle">JOBFIX unterstützt dich dabei Fragen <br>
-    und Interessen von Bewerbende zu beantworten. Damit wieder mehr qualitative Bewerbungen bei dir ankommen.</div>
+    und Interessen von Bewerbenden zu beantworten. Damit wieder mehr qualitative Bewerbungen bei dir ankommen.</div>
   <div class="splashTwoImageContainer">
     <img src="assets/splash_screen/2b.svg" class="splashTwoImage">
   </div>
@@ -37,16 +37,30 @@
 </div>
 
 <div *ngIf="screen === 4">
-  <div class="splashTitle">Fülle jetzt die Stellenausschreibung aus, anhand der Bedürfnisse der Bewerbenden,
-    um viele qualitative Bewerbungen zu erhalten.</div>
-  <div class="splashFourImageContainer">
-    <img src="assets/splash_screen/4.svg" class="splashFourImage">
+  <div *ngIf="key !== undefined">
+    <div class="splashTitle">Fülle jetzt die Stellenausschreibung aus, anhand der Bedürfnisse der Bewerbenden,
+      um viele qualitative Bewerbungen zu erhalten.</div>
+    <div class="splashFourImageContainer">
+      <img src="assets/splash_screen/4.svg" class="splashFourImage">
+    </div>
+    <div class="buttonBar">
+      <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+      <button mat-raised-button color="primary" (click)="login_as_department()" class="button">START</button>
+    </div>
   </div>
-  <div class="buttonBar">
-    <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
-    <button mat-raised-button color="primary" (click)="login_as_department()" class="button">START ALS FACHABTEILUNG</button>
-    <button mat-raised-button color="primary" (click)="login_as_human_resources()" class="button">START ALS PERSONALABTEILUNG</button>
+
+  <div *ngIf="key === undefined">
+    <div class="splashTitle">Fülle jetzt die Stellenausschreibung aus, anhand der Bedürfnisse der Bewerbenden,
+      um viele qualitative Bewerbungen zu erhalten.</div>
+    <div class="splashFourImageContainer">
+      <img src="assets/splash_screen/4.svg" class="splashFourImage">
+    </div>
+    <div class="buttonBar">
+      <button mat-raised-button color="primary" (click)="back()" class="button">ZURÜCK</button>
+      <button mat-raised-button color="primary" (click)="login_as_human_resources()" class="button">START</button>
+    </div>
   </div>
+
 </div>
 
 </div>

@@ -27,10 +27,7 @@ export class NavigationComponent {
     }
 
   onRoleChange() {
-    if (this.userRoleService.getUserRole() === userRole.departments) {
-      this.router.navigate(['home/department'])
-    }
-    else {
+    if (this.userRoleService.getUserRole() === userRole.human_resources) {
       this.router.navigate(['home/dashboard'])
     }
   }
