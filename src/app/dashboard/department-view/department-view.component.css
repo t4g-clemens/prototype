@@ -150,3 +150,7 @@ textarea:focus {
   height: 100%;
   display: flex;
 }
+
+li {
+  margin: 15px 0;
+}

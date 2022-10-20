@@ -15,13 +15,13 @@
         <!-- <div class="textareaLabel">{{ displayData[stepper.index].textareaLabel }}</div> -->
 
         <form [formGroup]="form">
-          <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0"></textarea>
-          <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1"></textarea>
-          <textarea rows="6" formControlName="team" *ngIf="stepper.index == 2"></textarea>
-          <textarea rows="6" formControlName="how_we_work" *ngIf="stepper.index == 3"></textarea>
-          <textarea rows="6" formControlName="impact_in_work" *ngIf="stepper.index == 4"></textarea>
-          <textarea rows="6" formControlName="title" *ngIf="stepper.index == 5"></textarea>
-          <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6"></textarea>
+          <textarea rows="6" formControlName="what_you_work_on" *ngIf="stepper.index == 0" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="what_you_bring" *ngIf="stepper.index == 1" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="team" *ngIf="stepper.index == 2" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="how_we_work" *ngIf="stepper.index == 3" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="impact_in_work" *ngIf="stepper.index == 4" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="title" *ngIf="stepper.index == 5" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
+          <textarea rows="6" formControlName="summary" *ngIf="stepper.index == 6" placeholder="Die HR wird dich beim Feinschliff unterstützen. Schreib einfach los... "></textarea>
         </form>
         <span class="buttonBar">
           <button mat-raised-button color="primary" (click)="back()" *ngIf="stepper.index !== 0">ZURÜCK</button>
@@ -37,7 +37,7 @@
   </div>
   <div class="helpContainer">
     <div class="hints">
-      <div class="title">Bewerbende möchten beispielsweise wissen:</div>
+      <div class="title">Daher möchten die Bewerbenden z.B. wissen:</div>
       <div class="empathyText">
         <ul>
           <li *ngFor="let hint of displayData[stepper.index].hints">{{ hint }}</li>

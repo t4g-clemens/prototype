@@ -107,31 +107,31 @@ interface data {
 
 let displayData = [
   { // 0
-    title: "Woran arbeite ich?",
-    text: "An welchen Aufgaben und Projekten arbeite ich? Wie zahle ich mit meiner Arbeit auf die Ziele der Behörde ein?",
+    title: "Woran werde ich arbeiten?",
+    text: `"Dies ist für mich wichtig, um nachvollziehen zu können, wie meine Arbeit auf die Ziele der Behörde einzahlt."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Deine Aufgaben",
     formName: "what_you_work_on",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
-      " An welche Themen, Projekte, werden die Bewerbenden arbeiten?",
-      " Beschreibe die Aufgaben und Arbeitsinhalte mit Beispielen",
-      " Beschreibe die Rolle",
-      " Beschreibe kurz, wie ein typischer Tag oder eine Woche aussehen könnte?"]
+      "An welche Themen, Projekte, werden die Bewerbenden arbeiten?",
+      "Beschreibe, wie sich die wichtigsten Aufgaben und Arbeitsinhalte für den Bewerbenden gestalten, am besten mithilfe kurzer Beispiele.",
+      "Beschreibe die Rolle, die die Bewerbende einnehmen wird."]
   },
   { // 1
-    title: "Was muss ich können?",
-    text: "Welche Qualifikationen sind wichtig, damit ich in dieser Stelle erfolgreich bin? Wie zahlen diese Fähigkeiten auf meine Aufgaben ein?",
+    title: "Was muss ich mitbringen?",
+    text: `"Ich möchten wissen, welche Qualifikationen und Fähigkeiten ich mitbringen muss und wie diese
+    auf das Tätigkeitsziel der Position einzahlen."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Das bringst du mit",
     formName: "what_you_bring",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Welche Abschlüsse sind gefordert?",
-      "Beschreibe die Fähigkeiten passend zu den Aufgaben und Arbeitsinhalten",
+      "Wie werden die verlangten Fähigkeiten auf die Aufgaben und Arbeitsinhalten einzahlen?",
+      "Welche anderen Fähigkeiten (Softskills), über den Abschluss hinaus, sind ebenfalls wichtig?",
       "Wie zahlen die Fähigkeiten auf die Ziele der Position ein?",
-      "Was für Tools sollten die Bewerbenden beherrschen?",
-      "Welche Softskills sind wichtig für das Team?",
+      "Was für Methoden oder Tools sollten die Bewerbende beherrschen?",
     ]
   },
   { // 2
@@ -143,59 +143,50 @@ let displayData = [
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
       "Ist das Team interdisziplinär?",
-      "Gibts es ähnliche Positionen?",
-      "Wer ist noch im Team?",
+      "Gibts es ähnliche Positionen oder Rollen?",
       "Wie groß ist das Team?",
       "Wie ist die Altersstruktur?",
       "Wie ist die Geschlechterverteilung?",
-      "Ist die Stelle eine neu geschaffen?",
+      "Ist die Stelle eine neu geschaffene?",
       "Wächst das Team?",
     ]
   },
   { // 3
     title: "Wie arbeite ich?",
-    text: "Wie ist die Zusammenarbeit im Team gestaltet? Welche Management- und Arbeitsmethoden kommen zur Anwendung?",
+    text: `"Für mich ist die Art der Zusammenarbeit im Team wichtig. Besonderes ausschlaggebend sind für mich die Tools und die Arbeitsmethoden."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Unser Arbeit",
     formName: "how_we_work",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
-      "Welche agilen Arbeitsmethoden werden eingesetzt?",
-      "Check-ins / Retros / Scrum / ...",
       "Beschreibe Eure Teamkultur und welche Werte euch wichtig sind?",
-      "Fehlerkultur / Auf Augenhöhe Entscheidungen treffen / Kaffeerunden zum Start in den Morgen / ...",
-      "Wie arbeitet ihr an den Aufgaben?",
-      "In zeitlich begrenzten Projekten / Tickets / Multidisziplinären Teams / ...",
-      "Wie frei und eigenverantwortlich wird der Bewerbende arbeiten können?",
-      "Beschreibe welche Formen des Arbeitsortes möglich sind (Office / Remote) und wie oft",
-      "Beschreibe diese, nur wenn sie wirklich gelebt werden",
+      "Wie werden Entscheidungen getroffen?",
+      "Wie frei und eigenverantwortlich werden Bewerbende arbeiten können?",
+      "Welche agilen Arbeitsmethoden werden eingesetzt?",
+      "Beschreibe welche Formen des Arbeitsortes möglich sind und wie oft?",
     ]
   },
   { // 4
-    title: "Warum ist das wichtig?",
-    text: "Inwiefern kann ich in dieser Position einen Mehrwert für das Referat und die Gesellschaft leisten?",
+    title: "Worauf zahlt meine Arbeit ein?",
+    text: `"Ich möchte wissen welchen Mehrwert ich mit meiner Arbeit für das Referat und die Gesellschaft leisten kann."`,
     imageUrl: "assets/person.jpg",
     textareaLabel: "Die Stelle im Referat",
     formName: "impact_in_work",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
-      "Welche Projekte verantwortet das Referat?",
-      "Wie zahlt die Stelle in die Ziele des Referats ein?",
-      "Wie zahlt die Stelle in die Ziele der Behörde ein?",
-      "Was soll in den ersten sechs Monaten erreicht werden?",
+      "Was ist die Aufgabe und das Ziel des Referats?",
+      "Was ist die Aufgabe und das Ziel der Stelle in Hinblick auf die Aufgabe des Referats? ",
+      "Was soll in dem ersten Jahr erreicht werden?",
     ]
   },
   { // 5
-    title: "Wie stelle ich mich vor?",
-    text: "Bewerbende möchten aus einem kurzen und prägnanten Titel herauslesen können, was ihr Aufgabe ist.",
+    title: "Was ist die Jobbezeichnung?",
+    text: `"Ich möchte aus einem kurzen und prägnanten Titel, der sich an Jobtitel aus der Freien Wirtschaft orientiert, meine Stelle einfach finden können."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Jobtitel",
+    textareaLabel: `"Jobtitel" in der Stellenausschreibung`,
     formName: "title",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
-      "An dieser Stelle nicht von Dienst-Rollen wie Referent:in, Sachbearbeiter:in, etc. sprechen.",
-      "Nicht mit behördlichen Funktionsbezeichungen arbeiten",
-      "Beispiele:",
       `"Koordinatorin / Koordinator (w/m/d) im IT-Betrieb"`,
       `"Team Lead Software Entwicklung (w/m/d)"`,
       `"Data Scientist (w/m/d) im IT-Betrieb"`,
@@ -205,10 +196,10 @@ let displayData = [
     ]
   },
   { // 6
-    title: "Kurze Zusammenfassung?",
-    text: "Formuliere einen Satz, der es Interessierten ermöglicht zu verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll.",
+    title: "Jobuntertitel",
+    text: `"Ich möchte in einem Satz verstehen, worum es bei der Stelle geht und woran gearbeitet werden soll."`,
     imageUrl: "assets/person.jpg",
-    textareaLabel: "Zusammenfassung",
+    textareaLabel: `"Jobuntertitel" in der Stellenausschreibung`,
     formName: "summary",
     hintTitle: "Daher möchte sie beispielsweise wissen",
     hints: [
