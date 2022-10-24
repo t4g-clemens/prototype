@@ -146,7 +146,6 @@ let displayData = [
       "Gibts es ähnliche Positionen oder Rollen?",
       "Wie groß ist das Team?",
       "Wie ist die Altersstruktur?",
-      "Wie ist die Geschlechterverteilung?",
       "Ist die Stelle eine neu geschaffene?",
       "Wächst das Team?",
     ]
