@@ -1,27 +1,40 @@
-# Prototype
+# Tech4Germany 2022 / ITZBund BMI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Jobfix ist ein Prototyp, um die Ergebnisse des dreimonatigen Tech4Germany Fellowships im Team ITZBund / BMI mit Nutzenden aus der Personalgewinnung zu vertesten.
 
-## Development server
+Jobfix erlaubt die erstellung von modernen Stellenanzeigen, die zugeschnitten auf die Bedürfnisse von Bewerbenden. Verantwortliche aus Personalgewinnung und Fachabteilungen werden Schritt für Schritt durch verschiedene Themenblöcke der Stellenausschreibungen geführt. Die Stimme der Bewerbenden gibt dabei jeweils Hilfestellungen.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Screenshot des Test Prototypen](docs/screenshot.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Architekturskizze
 
-## Build
+Das Projekt wurde mit [Angular CLI](https://github.com/angular/angular-cli) Version 14.2.3 erstellt. Als backend und hosting Platform nutzt das Projekt Google [Firebase](https://firebase.google.com/).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Deploy to Firebase 
 
-## Running unit tests
+Um Firebase zu konfigurieren die [CLI](https://firebase.google.com/docs/cli) herunterladen und mit dem Google Account verbinden
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+firebase login
+```
 
-## Running end-to-end tests
+Dann die App builden via
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+ng build
+```
 
-## Further help
+und schließlich auf Firebase hosting hochladen
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+firebase deploy
+```
+
+Das Projekt nutzt die Realtime Database von Firebase, um alle Frontend Instanzen synchron zu halten. Änderung, die ein Client verursacht, werden von der Realtime Database automatisch über eine Websocket Verbindung and alle anderen Clients gepushed.
+
+![Realtime Database](docs/firebase.png)
+
+## What's next?
+
+Das vorliegende Projekt dient als Test Prototype. Eine direkte Umsetzung ist deswegen weder vorgesehen noch sinnvoll. Vielmehr soll anhand des aktuellen Prototypen ein tiefergehendes Produktverständnis erzeugt werden, sodass die Erkenntnisse aus den Tests eine konsequent nutzerzentrierte Weiterentwicklung ermöglichen.
