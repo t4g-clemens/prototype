@@ -11,6 +11,7 @@ Jobfix erlaubt die erstellung von modernen Stellenanzeigen, die zugeschnitten au
 
 Das Projekt wurde mit [Angular CLI](https://github.com/angular/angular-cli) Version 14.2.3 erstellt. Als backend und hosting Platform nutzt das Projekt Google [Firebase](https://firebase.google.com/).
 
+
 ### Deploy to Firebase 
 
 Um Firebase zu konfigurieren die [CLI](https://firebase.google.com/docs/cli) herunterladen und mit dem Google Account verbinden
@@ -34,6 +35,16 @@ firebase deploy
 Das Projekt nutzt die Realtime Database von Firebase, um alle Frontend Instanzen synchron zu halten. Änderung, die ein Client verursacht, werden von der Realtime Database automatisch über eine Websocket Verbindung and alle anderen Clients gepushed.
 
 ![Realtime Database](docs/firebase.png)
+
+### Run locally
+
+Um das Projekt lokal laufen zu lassen ist es nötig die Firebase Umgebung lokal zu emulieren. Dazu kann der eigene Emulator vom Firebase CLI verwendet werden:
+
+```
+firebase emulators:start
+```
+
+Dabei muss die Realtime Database als Emulatorerweiterung initialisiert sein.
 
 ## What's next?
 
